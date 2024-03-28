@@ -24,5 +24,7 @@
     formatter = forEachSystem (pkgs: pkgs.alejandra);
 
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+
+    nixosConfigurations = import ./hosts/default.nix { inherit lib inputs;} ;
   };
 }
