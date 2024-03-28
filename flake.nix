@@ -11,7 +11,7 @@
     ...
   }: let
     lib = nixpkgs.lib;
-    systems = ["x86_64-linux" "aarch64-linux"];
+    systems = ["x86_64-linux"];
 
     pkgsFor = lib.genAttrs systems (system:
       import nixpkgs {
@@ -25,6 +25,6 @@
 
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
-    nixosConfigurations = import ./hosts/default.nix { inherit lib inputs;} ;
+    nixosConfigurations = import ./hosts/default.nix {inherit lib inputs;};
   };
 }

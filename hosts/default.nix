@@ -1,4 +1,8 @@
-{lib, inputs, ...}:{
+{
+  lib,
+  inputs,
+  ...
+}: {
   # MSI Laptop
   dragon = lib.nixosSystem {
     system = "x86_64-linux";
