@@ -22,5 +22,7 @@
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
   in {
     formatter = forEachSystem (pkgs: pkgs.alejandra);
+
+    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
   };
 }
