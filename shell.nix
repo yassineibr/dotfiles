@@ -17,6 +17,11 @@
     nativeBuildInputs = with pkgs; [
       git
       nix
+
+      # Secret management
+      age
+      ssh-to-age
+      sops
     ];
   };
 }
