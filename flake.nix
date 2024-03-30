@@ -13,12 +13,18 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
     home-manager,
+    treefmt-nix,
     ...
   }: let
     lib = nixpkgs.lib // home-manager.lib;
@@ -31,12 +37,18 @@
       });
 
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+
+    # Eval the treefmt modules from ./treefmt.nix
+    treefmtEval =
+      forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
   in {
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
-    formatter = forEachSystem (pkgs: pkgs.alejandra);
+    formatter =
+      forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
-    homeConfigurations = import ./home/default.nix {inherit lib inputs pkgsFor;};
+    homeConfigurations =
+      import ./home/default.nix {inherit lib inputs pkgsFor;};
 
     nixosConfigurations = import ./hosts/default.nix {inherit lib inputs;};
   };
