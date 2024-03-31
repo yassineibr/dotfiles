@@ -1,7 +1,10 @@
 keys:
   - &global age1rr03jh0pdat444rhr4rahj3hus64gdfjm3pzayn8aykyq6f0tq2qqw5qg2
+  - &hosts:
+    - &dragon age1xs8wq47r0z3vwm07fe0zd5jt4vzmy6zvz4s5czfp99q2svr2d5aqvjec0h
 creation_rules:
   - path_regex: secrets.ya?ml$
     key_groups:
       - age:
         - *global
+        - *dragon
