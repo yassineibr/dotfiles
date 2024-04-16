@@ -3,5 +3,7 @@
   imports = [
     ./locale.nix
     ./sops.nix
+    ./zsh.nix
+    ./nix-settings.nix
   ];
 }
