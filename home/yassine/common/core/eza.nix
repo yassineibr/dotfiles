@@ -12,4 +12,8 @@
       "--group-directories-first"
     ];
   };
+
+  home.shellAliases = {
+    "tree" = "eza --tree";
+  };
 }
