@@ -9,4 +9,9 @@
     ./zoxide.nix
     ./zsh.nix
   ];
+
+  home.username = "yassine";
+  home.homeDirectory = "/home/yassine";
+
+  nixpkgs.config.allowUnfree = true;
 }
