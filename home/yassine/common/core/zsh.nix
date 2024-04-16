@@ -33,11 +33,6 @@
     '';
     dotDir = ".config/zsh";
     history.path = "$HOME/.config/zsh/.zsh_history";
-    profileExtra = ''
-      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-          exec ssh-agent Hyprland
-        fi
-    '';
   };
 
   programs.fzf = {

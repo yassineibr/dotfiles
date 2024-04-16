@@ -10,6 +10,7 @@
     ./cliphist.nix
     ./vms.nix
     ../../wallpaper/hyprpaper.nix
+    ./tty-login.nix
   ];
 
   home.packages = with pkgs; [
