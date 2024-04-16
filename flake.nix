@@ -18,6 +18,13 @@
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # HyprWM Flakes
+    hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprlock.url = "github:hyprwm/Hyprlock";
+
+    hyprpaper.url = "github:hyprwm/hyprpaper";
   };
 
   outputs = inputs @ {
