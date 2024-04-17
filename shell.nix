@@ -18,6 +18,7 @@
     nativeBuildInputs = with pkgs; [
       git
       nix
+      home-manager
 
       # Secret management
       age
