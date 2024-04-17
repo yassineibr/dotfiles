@@ -7,17 +7,19 @@
 
   imports = [
     ./hardware-configuration.nix
-    ../common/optional/pipewire.nix
+    ./packages.nix
 
     ../common/core
+    ../common/optional/boot/systemd-boot.nix
 
     ./gnome.nix
-    ./packages.nix
+    ../common/optional/pipewire.nix
+
+    ../common/optional/network/network-manager.nix
+    ../common/optional/network/tailscale.nix
 
     ../common/optional/fonts.nix
 
-    ../common/optional/boot/systemd-boot.nix
-    ../common/optional/network/network-manager.nix
     ../common/users/yassine
   ];
 
