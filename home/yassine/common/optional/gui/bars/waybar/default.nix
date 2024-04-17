@@ -105,7 +105,7 @@
         network = let
           nm-editor = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
         in {
-          interface = "wlo1";
+          # interface = "wlo1";
           format-wifi = "󰖩 {essid} ";
           format-ethernet = "󰈀";
           format-alt = "󰤨  {bandwidthDownBytes}";
