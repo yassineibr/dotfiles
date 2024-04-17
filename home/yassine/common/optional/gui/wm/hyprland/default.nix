@@ -13,7 +13,10 @@
     # ./tty-login.nix
     ../../launchers/rofi.nix
     ../../terminal/kitty.nix
+    ../../others/dunst.nix
+
     ../../bars/waybar
+    ../../others/wlogout
   ];
 
   home.packages = with pkgs; [
