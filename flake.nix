@@ -29,6 +29,11 @@
     hyprlock.url = "github:hyprwm/Hyprlock";
 
     hyprpaper.url = "github:hyprwm/hyprpaper";
+
+    hyprgrass = {
+      url = "github:horriblename/hyprgrass";
+      inputs.hyprland.follows = "hyprland"; # IMPORTANT
+    };
   };
 
   outputs = inputs @ {
