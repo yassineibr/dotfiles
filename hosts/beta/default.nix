@@ -13,7 +13,7 @@
     ../common/optional/boot/systemd-boot.nix
     ../common/optional/nixos-rebuild.nix
 
-    ./gnome.nix
+    # ./gnome.nix
     ../common/optional/gui/hyprland.nix
 
     ../common/optional/pipewire.nix
