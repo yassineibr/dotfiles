@@ -16,6 +16,14 @@
     ./common/optional/gui/wm/hyprland
   ];
 
+  wayland.windowManager.hyprland = {
+    settings = {
+      monitor = [
+        ",preferred,auto,auto"
+      ];
+    };
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "23.11";
