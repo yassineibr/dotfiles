@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./common/core
+    ./common/optional/packages.nix
 
     ./common/optional/apps/git.nix
     ./common/optional/apps/direnv.nix
