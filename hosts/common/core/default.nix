@@ -5,5 +5,6 @@
     ./sops.nix
     ./zsh.nix
     ./nix-settings.nix
+    ./home-manager.nix
   ];
 }
