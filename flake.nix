@@ -56,7 +56,7 @@
 
     # Eval the treefmt modules from ./treefmt.nix
     treefmtEval =
-      forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+      forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./shell/treefmt.nix);
   in {
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
 
