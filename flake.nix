@@ -19,6 +19,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # NixVim
+    nix-vim.url = "github:yassineibr/nixvim";
+
     # HyprWM Flakes
     hyprland.url = "github:hyprwm/Hyprland";
 
