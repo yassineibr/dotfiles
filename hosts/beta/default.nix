@@ -11,6 +11,7 @@
 
     ../common/core
     ../common/optional/boot/systemd-boot.nix
+    ../common/optional/nixos-rebuild.nix
 
     ./gnome.nix
     ../common/optional/gui/hyprland.nix
