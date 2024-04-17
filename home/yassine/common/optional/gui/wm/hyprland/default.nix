@@ -8,9 +8,11 @@
     inputs.hyprland.homeManagerModules.default
     ./hyprlock.nix
     ./cliphist.nix
-    ./vms.nix
+    # ./vms.nix
     ../../wallpaper/hyprpaper.nix
-    ./tty-login.nix
+    # ./tty-login.nix
+    ../../launchers/rofi.nix
+    ../../terminal/kitty.nix
   ];
 
   home.packages = with pkgs; [
