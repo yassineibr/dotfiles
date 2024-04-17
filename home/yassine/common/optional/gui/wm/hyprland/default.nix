@@ -10,7 +10,7 @@
     ./cliphist.nix
     # ./vms.nix
     ../../wallpaper/hyprpaper.nix
-    # ./tty-login.nix
+    ./tty-login.nix
     ../../launchers/rofi.nix
     ../../terminal/kitty.nix
     ../../others/dunst.nix
