@@ -168,7 +168,7 @@
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
         workspace_swipe = "on";
         workspace_swipe_distance = 200;
-	workspace_swipe_cancel_ratio = 0.15;
+        workspace_swipe_cancel_ratio = 0.15;
       };
 
       # "device:epic-mouse-v1" = {
