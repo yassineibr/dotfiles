@@ -19,7 +19,7 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        ",preferred,auto,auto"
+        "eDP-1,preferred,auto,1.2"
       ];
     };
   };
