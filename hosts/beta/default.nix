@@ -13,6 +13,8 @@
     ../common/optional/boot/systemd-boot.nix
 
     ./gnome.nix
+    ../common/optional/gui/hyprland.nix
+
     ../common/optional/pipewire.nix
 
     ../common/optional/network/network-manager.nix
