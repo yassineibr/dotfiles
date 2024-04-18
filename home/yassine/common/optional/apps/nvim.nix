@@ -11,4 +11,6 @@
     "vi" = "nvim";
     "vim" = "nvim";
   };
+
+  programs.ripgrep.enable = true;
 }
