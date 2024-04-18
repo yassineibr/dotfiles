@@ -7,7 +7,7 @@
   programs.waybar = {
     enable = true;
     systemd = {
-      enable = false;
+      enable = true;
       target = "graphical-session.target";
     };
     style = ./style.css;
@@ -15,6 +15,7 @@
       {
         "layer" = "top";
         "position" = "top";
+
         modules-left = [
           "custom/launcher"
           "temperature"
@@ -45,7 +46,7 @@
           "format" = " ";
           "on-click" = "pkill rofi || rofi -show drun -show-icons";
           "on-click-middle" = "exec default_wall";
-          "on-click-right" = "exec wallpaper_random";
+          "on-click-right" = "systemctl --user restart waybar.service";
           "tooltip" = false;
         };
         "custom/cava-internal" = {

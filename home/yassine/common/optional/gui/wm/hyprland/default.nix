@@ -54,7 +54,7 @@
     enable = true;
     settings = {
       exec = [
-        "pkill waybar; sleep 0.5 && waybar"
+        # "pkill waybar; sleep 0.5 && waybar"
       ];
       exec-once = [
         "[workspace 2 silent] brave"
