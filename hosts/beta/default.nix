@@ -24,6 +24,8 @@
     ../common/optional/fonts.nix
 
     ../common/users/yassine
+
+    ../common/optional/cache
   ];
 
   hardware.opengl = {
