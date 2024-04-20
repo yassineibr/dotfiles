@@ -5,5 +5,6 @@
     })
     # nerdfonts
     font-awesome
+    source-sans-pro
   ];
 }
