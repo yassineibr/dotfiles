@@ -4,6 +4,7 @@
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";
@@ -43,6 +44,8 @@
     treefmt-nix,
     ...
   }: let
+    inherit (self) outputs;
+
     lib = nixpkgs.lib // home-manager.lib;
     systems = ["x86_64-linux"];
 
@@ -50,6 +53,7 @@
       import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        overlays = [outputs.overlays.unstable-packages];
       });
 
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
@@ -59,6 +63,7 @@
       forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./shell/treefmt.nix);
   in {
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+    overlays = import ./overlays {inherit inputs;};
 
     formatter =
       forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
@@ -66,6 +71,6 @@
     homeConfigurations =
       import ./home/default.nix {inherit lib inputs pkgsFor;};
 
-    nixosConfigurations = import ./hosts/default.nix {inherit lib inputs;};
+    nixosConfigurations = import ./hosts/default.nix {inherit lib inputs outputs;};
   };
 }
