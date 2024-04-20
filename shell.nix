@@ -4,10 +4,11 @@
   # If pkgs is not defined, instanciate nixpkgs from locked commit
   let
     getLock = flake: (builtins.fromJSON (builtins.readFile ./flake.lock)).nodes.${flake}.locked;
-    getTarBall = lock: fetchTarball {
-      url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
-      sha256 = lock.narHash;
-    };
+    getTarBall = lock:
+      fetchTarball {
+        url = "https://github.com/nixos/nixpkgs/archive/${lock.rev}.tar.gz";
+        sha256 = lock.narHash;
+      };
     nixpkgs = getTarBall (getLock "nixpkgs");
     nixpkgs-unstable = getTarBall (getLock "nixpkgs-unstable");
   in
