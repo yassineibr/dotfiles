@@ -1,4 +1,4 @@
-{...}: {
+{outputs, ...}: {
   # Importing all core files
   imports = [
     ./locale.nix
@@ -6,5 +6,6 @@
     ./zsh.nix
     ./nix-settings.nix
     ./home-manager.nix
+    ./overlays.nix
   ];
 }
