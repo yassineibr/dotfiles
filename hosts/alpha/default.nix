@@ -9,10 +9,14 @@
 
   imports = [
     ./hardware-configuration.nix
+    ../common/optional/hardware/nvidia/laptop.nix
+    ../common/optional/firewall.nix
+
     ./packages.nix
 
     ../common/core
-    ../common/optional/boot/systemd-boot.nix
+    ../common/optional/boot/secureboot.nix
+    ../common/optional/boot/dualboot.nix
     ../common/optional/nixos-rebuild.nix
 
     ../common/optional/gui/hyprland.nix
@@ -21,6 +25,11 @@
 
     ../common/optional/network/network-manager.nix
     ../common/optional/network/tailscale.nix
+
+    ../common/optional/virtualisation/virt-manager.nix
+    ../common/optional/virtualisation/docker.nix
+
+    ../common/optional/services/syncthing.nix
 
     ../common/optional/fonts.nix
 
