@@ -1,4 +1,8 @@
-{
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    gnome.gnome-tweaks
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
