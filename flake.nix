@@ -70,6 +70,7 @@
   in {
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
     overlays = import ./overlays {inherit inputs;};
+    hydraJobs = import ./hydra.nix {inherit inputs outputs;};
 
     formatter =
       forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
