@@ -9,5 +9,6 @@
     gnome.gnome-tweaks
     #  wget
     brave
+    waypipe
   ];
 }
