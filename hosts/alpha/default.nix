@@ -10,6 +10,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common/optional/hardware/nvidia/laptop.nix
+    ../common/optional/hardware/bluetooth.nix
     ../common/optional/firewall.nix
 
     ./packages.nix
@@ -30,10 +31,12 @@
     ../common/optional/virtualisation/docker.nix
 
     ../common/optional/services/syncthing.nix
+    ../common/optional/services/sshd.nix
 
     ../common/optional/fonts.nix
 
     ../common/users/yassine
+    ../common/optional/health.nix
 
     ../common/optional/cache
   ];
