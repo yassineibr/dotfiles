@@ -25,7 +25,7 @@
     nixvim.url = "github:yassineibr/nixvim";
 
     # HyprWM Flakes
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "github:hyprwm/Hyprland/ef23ef60c5641c5903f9cf40571ead7ad6aba1b9";
 
     hyprlock.url = "github:hyprwm/Hyprlock";
 
