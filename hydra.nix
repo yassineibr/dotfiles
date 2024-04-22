@@ -13,5 +13,4 @@ in {
   inherit (outputs) devShells;
   # pkgs = mapAttrs filterValidPkgs outputs.packages;
   hosts = mapAttrs getCfg outputs.nixosConfigurations;
-
 }
