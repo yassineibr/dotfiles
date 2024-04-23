@@ -31,6 +31,7 @@
     ../common/optional/virtualisation/docker.nix
 
     ../common/optional/services/syncthing.nix
+    ../common/optional/services/logind.nix
     ../common/optional/services/sshd.nix
 
     ../common/optional/fonts.nix
