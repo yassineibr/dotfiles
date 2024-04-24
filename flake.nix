@@ -72,6 +72,8 @@
     overlays = import ./overlays {inherit inputs;};
     hydraJobs = import ./hydra.nix {inherit inputs outputs;};
 
+    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+
     formatter =
       forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
