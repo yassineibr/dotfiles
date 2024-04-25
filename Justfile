@@ -1,11 +1,14 @@
 default:
   @just --list
 
-deploy:
-    nixos-rebuild switch --flake . --use-remote-sudo
+deploy host="":
+    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo
 
-debug:
-    nixos-rebuild switch --flake . --use-remote-sudo --show-trace --verbose
+debug host="":
+    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+
+build host="":
+    nixos-rebuild build --flake .#{{host}} --use-remote-sudo --show-trace --verbose
 
 update:
     nix flake update
