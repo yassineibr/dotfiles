@@ -1,5 +1,5 @@
 {
-  description = "Application packaged using poetry2nix";
+  description = "DevShell for Python developement";
 
   inputs = {
     flake-utils.url = "github:numtide/flake-utils";
@@ -12,7 +12,6 @@
     flake-utils,
   }:
     flake-utils.lib.eachDefaultSystem (system: let
-      # see https://github.com/nix-community/poetry2nix/tree/master#api for more functions and examples.
       pkgs = nixpkgs.legacyPackages.${system};
       lib-path = with pkgs;
         lib.makeLibraryPath [
