@@ -65,22 +65,24 @@
 
     forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
 
-    # Eval the treefmt modules from ./treefmt.nix
+    # Eval the treefmt modules from ./shell/treefmt.nix
     treefmtEval =
       forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./shell/treefmt.nix);
   in {
     devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
-    overlays = import ./overlays {inherit inputs;};
+
+    formatter = forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+
+    homeConfigurations = import ./home/default.nix {inherit lib inputs pkgsFor;};
+
     hydraJobs = import ./hydra.nix {inherit inputs outputs;};
+
+    nixosConfigurations = import ./hosts/default.nix {inherit lib inputs outputs;};
+
+    overlays = import ./overlays {inherit inputs;};
 
     packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
 
-    formatter =
-      forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
-
-    homeConfigurations =
-      import ./home/default.nix {inherit lib inputs pkgsFor;};
-
-    nixosConfigurations = import ./hosts/default.nix {inherit lib inputs outputs;};
+    templates = import ./templates;
   };
 }
