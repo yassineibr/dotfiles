@@ -10,6 +10,9 @@ debug host="":
 build host="":
     nixos-rebuild build --flake .#{{host}} --use-remote-sudo --show-trace --verbose
 
+test host="":
+    nixos-rebuild test --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+
 update:
     nix flake update
 
