@@ -18,6 +18,7 @@
           libffi
           openssl
           stdenv.cc.cc
+	  zlib
           # If you want to use CUDA, you should uncomment this line.
           # linuxPackages.nvidia_x11
         ];
