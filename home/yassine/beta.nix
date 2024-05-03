@@ -19,6 +19,7 @@
 
     ./common/optional/gui/wm/hyprland
     # ./common/optional/gui/wm/hyprland/touch.nix
+    ./common/optional/gui/wm/hyprland/eww.nix
   ];
 
   wayland.windowManager.hyprland = {
