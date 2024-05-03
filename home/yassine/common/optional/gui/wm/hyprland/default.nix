@@ -15,7 +15,6 @@
     ../../terminal/kitty.nix
     ../../others/dunst.nix
 
-    ../../bars/waybar
     ../../others/wlogout
   ];
 
@@ -26,7 +25,7 @@
     wl-clipboard
     slurp
     upower
-    (pkgs.writeShellScriptBin "gamemode" ''
+    (writeShellScriptBin "gamemode" ''
       HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
       if [ "$HYPRGAMEMODE" = 1 ] ; then
               hyprctl --batch "\
@@ -53,9 +52,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec = [
-        "pkill waybar; sleep 0.5 && waybar"
-      ];
+      exec = [];
       exec-once = [
         "[workspace 2 silent] brave"
         "[workspace 9 silent] keepassxc"
@@ -229,9 +226,6 @@
 
           #gamemode
           "$mainMod, G, exec, gamemode"
-
-          # waybar
-          "$mainMod, W, exec, pkill -SIGUSR1 waybar" # Hide Waybar
 
           # Hyprlock
           "$mainMod, L, exec, grim '/home/yassine/.cache/lockscreen.png' && hyprlock"
