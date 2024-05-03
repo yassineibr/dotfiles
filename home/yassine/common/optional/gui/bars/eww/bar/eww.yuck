@@ -1,0 +1,70 @@
+(defwidget bar []
+  (centerbox :orientation "h"
+    (workspaces)
+    time
+    (sidestuff)))
+
+(defwidget sidestuff []
+  (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
+    (metric :label "󰻠 "
+      :value {EWW_RAM.used_mem_perc}
+    :onchange "")
+    (metric :label "💾"
+      :value {round((1 - (EWW_DISK["/"].free / EWW_DISK["/"].total)) * 100, 0)}
+    :onchange "")
+  ))
+
+(deflisten workspaces :initial "[]" "eww-get-workspaces")
+(deflisten current_workspace :initial "1" "eww-get-active-workspace")
+(defwidget workspaces []
+  (eventbox :onscroll "eww-change-active-workspace {} ${current_workspace}" :class "workspaces-widget"
+    (box :space-evenly false
+      :spacing 5
+      (label :text "  ")
+      (label :text "${workspaces}${current_workspace}" :visible false)
+      (for workspace in workspaces
+        (eventbox :onclick "hyprctl dispatch workspace ${workspace.id}"
+          :class "workspace-entry"
+          :cursor "pointer"
+          :visible {workspace.windows > 0 || workspace.id == current_workspace}
+          (box :class "${workspace.id == current_workspace ? "current" : ""} ${workspace.windows > 0 ? "occupied" : "empty"}"
+            :space-evenly false
+            :spacing 10
+            ""
+            (label :justify "fill" :text "${workspace.id}")
+            ""
+          )
+        )
+      )
+    )
+  )
+)
+
+(defwidget metric [label value onchange]
+  (box :orientation "h"
+    :class "metric"
+    :space-evenly false
+    (box :class "label" label)
+    (scale :min 0
+      :max 101
+      :active {onchange != ""}
+      :value value
+    :onchange onchange)))
+
+
+
+(defpoll time :interval "1s" "date '+%H:%M:%S %b %d, %Y'")
+
+(defwindow bar
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry :x "0%"
+    :y "5px"
+    :width "99.5%"
+    :height "30px"
+  :anchor "top center")
+  :reserve (struts :distance "10px" :side "top")
+  :exclusive true
+  (bar))
+
+

@@ -1,0 +1,80 @@
+*{
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 12pt;
+  font-weight: bold;
+  border-radius: 9px;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+//Global Styles
+.bar {
+  background-color: #1e1e2a;
+  color: #b0b4bc;
+  padding: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+  background-color: #1e1e2a;
+  padding: 3px;
+  padding-left: 8px;
+  border: 2px none #33ccff;
+}
+
+// Styles on classes (see eww.yuck for more information)
+
+.sidestuff slider {
+  all: unset;
+  color: #ffd5cd;
+}
+
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.metric scale trough highlight {
+  all: unset;
+  background-color: #D35D6E;
+  color: #000000;
+  border-radius: 10px;
+}
+.metric scale trough {
+  all: unset;
+  background-color: #4e4e4e;
+  border-radius: 50px;
+  min-height: 3px;
+  min-width: 50px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+.label-ram {
+  font-size: large;
+}
+.workspace-entry:hover {
+  background-color: black;
+}
+.current {
+  background-color: rgb(181, 232, 224);
+  color: rgb(26, 24, 38);
+}
+.empty {
+  color: grey;
+}
+.workspaces-widget {
+  color: rgb(150, 205, 251);
+  // padding-left: 0px;
+  // padding-right: 4px;
+}
+
