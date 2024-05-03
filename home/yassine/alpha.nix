@@ -19,6 +19,7 @@
 
     ./common/optional/gui/wm/hyprland
     ./common/optional/gui/wm/hyprland/nvidia.nix
+    ./common/optional/gui/wm/hyprland/waybar.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
