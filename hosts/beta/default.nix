@@ -18,6 +18,9 @@
 
     ../common/optional/pipewire.nix
 
+    ../common/optional/virtualisation/virt-manager.nix
+    ../common/optional/virtualisation/docker.nix
+
     ../common/optional/network/network-manager.nix
     ../common/optional/network/tailscale.nix
 
