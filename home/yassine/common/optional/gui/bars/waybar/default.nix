@@ -6,6 +6,7 @@
 }: {
   programs.waybar = {
     enable = true;
+    package = pkgs.unstable.waybar;
     style = ./style.css;
     settings = [
       {
@@ -70,7 +71,7 @@
 
         "clock" = {
           "interval" = 1;
-          "format" = "{: %R   %d/%m}";
+          "format" = "  {:%H:%M   %d/%m}";
           "tooltip" = true;
           "tooltip-format" = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         };
