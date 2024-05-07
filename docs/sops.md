@@ -7,7 +7,7 @@
 To generate new key at ~/.config/sops/age/keys.txt
 
 ```bash
-age -c age-keygen -o ~/.config/sops/age/keys.txt
+age-keygen -o ~/.config/sops/age/keys.txt
 ```
 
 ### From SSH
@@ -23,7 +23,7 @@ ssh-to-age -private-key -i ~/.ssh/private > ~/.config/sops/age/keys.txt
 To get the public key of ~/.config/sops/age/keys.txt
 
 ```bash
-age -c age-keygen -y ~/.config/sops/age/keys.txt
+age-keygen -y ~/.config/sops/age/keys.txt
 ```
 
 ## Adding new keys
