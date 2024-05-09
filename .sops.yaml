@@ -3,6 +3,7 @@ keys:
   - &hosts:
     - &alpha age1xs8wq47r0z3vwm07fe0zd5jt4vzmy6zvz4s5czfp99q2svr2d5aqvjec0h
     - &beta age1fduxce42kleecefwtu28lprufs5rsuw07kp9rszgkn2kjsgmzgxs5mxrwc
+    - &omega age1llsz9y0zl02d42maknvrjnf66tqz2cgq83m7hlgqpquc8vvx0phs0qmh8u
 creation_rules:
   - path_regex: secrets.ya?ml$
     key_groups:
@@ -10,3 +11,4 @@ creation_rules:
         - *global
         - *alpha
         - *beta
+        - *omega
