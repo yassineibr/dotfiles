@@ -1,1 +1,6 @@
-{ python.path = ./python; }
+{
+  python = {
+    path = ./python;
+    description = "Python developement environment";
+  };
+}
