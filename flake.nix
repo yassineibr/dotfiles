@@ -22,7 +22,10 @@
     };
 
     # NixVim
-    nixvim.url = "github:yassineibr/nixvim";
+    nixvim = {
+      url = "github:yassineibr/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     # HyprWM Flakes
     # hyprland.url = "github:hyprwm/Hyprland/ef23ef60c5641c5903f9cf40571ead7ad6aba1b9";
