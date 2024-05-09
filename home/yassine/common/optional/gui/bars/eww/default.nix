@@ -11,6 +11,15 @@ in
   home.packages = [
     pkgs.jq
 
+    (pkgs.writeShellScriptBin "eww-get-volume" ''
+      volume=$(wpctl get-volume @DEFAULT_SINK@)
+      if echo $volume | grep 'MUTED'; then
+        echo 0
+      else
+        echo $volume | awk '{ print $2 }'
+      fi
+    '')
+
     (pkgs.writeShellScriptBin "eww-change-active-workspace" ''
       direction=$1
       current=$2

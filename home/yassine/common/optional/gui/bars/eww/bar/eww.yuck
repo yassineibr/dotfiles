@@ -1,3 +1,4 @@
+(defpoll volume :interval "1s" "eww-get-volume")
 (defwidget bar []
   (centerbox :orientation "h"
     (workspaces)
@@ -6,7 +7,10 @@
 
 (defwidget sidestuff []
   (box :class "sidestuff" :orientation "h" :space-evenly false :halign "end"
-    (metric :label "󰻠 "
+   (metric :label "🔊"
+    :value volume
+    :onchange "amixer -D pulse sset Master {}%")
+    (metric :label "󰍛 "
       :value {EWW_RAM.used_mem_perc}
     :onchange "")
     (metric :label "💾"
@@ -53,7 +57,7 @@
 
 
 
-(defpoll time :interval "1s" "date '+%H:%M:%S %b %d, %Y'")
+(defpoll time :interval "1m" "date '+%H:%M %b %d, %Y'")
 
 (defwindow bar
   :monitor 0
