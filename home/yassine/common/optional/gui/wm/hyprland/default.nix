@@ -3,7 +3,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   imports = [
     # inputs.hyprland.homeManagerModules.default
     ./hyprlock.nix
@@ -53,7 +54,7 @@
     enable = true;
     package = pkgs.unstable.hyprland;
     settings = {
-      exec = [];
+      exec = [ ];
       exec-once = [
         "[workspace 2 silent] brave"
         "[workspace 9 silent] keepassxc"
@@ -241,18 +242,22 @@
         ++ (
           # workspaces
           # binds $mainMod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (builtins.genList (
-              x: let
-                ws = let
-                  c = (x + 1) / 10;
-                in
+          builtins.concatLists (
+            builtins.genList (
+              x:
+              let
+                ws =
+                  let
+                    c = (x + 1) / 10;
+                  in
                   builtins.toString (x + 1 - (c * 10));
-              in [
+              in
+              [
                 "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
                 "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
               ]
-            )
-            10)
+            ) 10
+          )
         );
 
       bindm = [

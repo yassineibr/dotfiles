@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   # Setting RTC time standard to localtime, compatible with Windows in its default configuration
   time.hardwareClockInLocalTime = true;
 
@@ -25,14 +26,14 @@
         commands = [
           {
             command = "${pkgs.systemd}/bin/reboot";
-            options = ["NOPASSWD"];
+            options = [ "NOPASSWD" ];
           }
           {
             command = "${pkgs.efibootmgr}/bin/efibootmgr";
-            options = ["NOPASSWD"];
+            options = [ "NOPASSWD" ];
           }
         ];
-        groups = ["wheel"];
+        groups = [ "wheel" ];
       }
     ];
   };

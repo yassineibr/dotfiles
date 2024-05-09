@@ -3,7 +3,8 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   wayland.windowManager.hyprland = {
     settings = {
       env = [

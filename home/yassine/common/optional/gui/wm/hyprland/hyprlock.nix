@@ -3,10 +3,9 @@
   pkgs,
   config,
   ...
-}: {
-  imports = [
-    inputs.hyprlock.homeManagerModules.default
-  ];
+}:
+{
+  imports = [ inputs.hyprlock.homeManagerModules.default ];
 
   programs.hyprlock = {
     enable = true;
@@ -17,10 +16,6 @@
         blur_passes = 1;
       }
     ];
-    labels = [
-      {
-        text = "Hi $USER";
-      }
-    ];
+    labels = [ { text = "Hi $USER"; } ];
   };
 }

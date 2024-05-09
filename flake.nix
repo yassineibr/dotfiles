@@ -45,45 +45,49 @@
     };
   };
 
-  outputs = inputs @ {
-    self,
-    nixpkgs,
-    home-manager,
-    treefmt-nix,
-    ...
-  }: let
-    inherit (self) outputs;
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      home-manager,
+      treefmt-nix,
+      ...
+    }:
+    let
+      inherit (self) outputs;
 
-    lib = nixpkgs.lib // home-manager.lib;
-    systems = ["x86_64-linux"];
+      lib = nixpkgs.lib // home-manager.lib;
+      systems = [ "x86_64-linux" ];
 
-    pkgsFor = lib.genAttrs systems (system:
-      import nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [outputs.overlays.unstable-packages];
-      });
+      pkgsFor = lib.genAttrs systems (
+        system:
+        import nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [ outputs.overlays.unstable-packages ];
+        }
+      );
 
-    forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
 
-    # Eval the treefmt modules from ./shell/treefmt.nix
-    treefmtEval =
-      forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./shell/treefmt.nix);
-  in {
-    devShells = forEachSystem (pkgs: import ./shell.nix {inherit pkgs;});
+      # Eval the treefmt modules from ./shell/treefmt.nix
+      treefmtEval = forEachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./shell/treefmt.nix);
+    in
+    {
+      devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
 
-    formatter = forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      formatter = forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
 
-    homeConfigurations = import ./home/default.nix {inherit lib inputs pkgsFor;};
+      homeConfigurations = import ./home/default.nix { inherit lib inputs pkgsFor; };
 
-    hydraJobs = import ./hydra.nix {inherit inputs outputs;};
+      hydraJobs = import ./hydra.nix { inherit inputs outputs; };
 
-    nixosConfigurations = import ./hosts/default.nix {inherit lib inputs outputs;};
+      nixosConfigurations = import ./hosts/default.nix { inherit lib inputs outputs; };
 
-    overlays = import ./overlays {inherit inputs;};
+      overlays = import ./overlays { inherit inputs; };
 
-    packages = forEachSystem (pkgs: import ./pkgs {inherit pkgs;});
+      packages = forEachSystem (pkgs: import ./pkgs { inherit pkgs; });
 
-    templates = import ./templates;
-  };
+      templates = import ./templates;
+    };
 }

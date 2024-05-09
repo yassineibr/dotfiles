@@ -1,3 +1,1 @@
-{
-  python.path = ./python;
-}
+{ python.path = ./python; }

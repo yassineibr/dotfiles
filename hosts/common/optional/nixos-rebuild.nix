@@ -3,7 +3,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   system.activationScripts.diff = {
     supportsDryActivation = true;
     text = ''

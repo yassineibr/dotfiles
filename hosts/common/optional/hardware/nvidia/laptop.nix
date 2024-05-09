@@ -1,8 +1,5 @@
+{ pkgs, config, ... }:
 {
-  pkgs,
-  config,
-  ...
-}: {
   # Enable OpenGL
   hardware.opengl = {
     enable = true;
@@ -11,8 +8,8 @@
   };
 
   # Load nvidia driver for Xorg and Wayland
-  boot.kernelParams = ["nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
-  services.xserver.videoDrivers = ["nvidia"];
+  boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting is needed most of the time

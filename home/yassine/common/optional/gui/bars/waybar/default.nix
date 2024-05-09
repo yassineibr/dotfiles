@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.waybar = {
     enable = true;
     package = pkgs.unstable.waybar;
@@ -18,9 +19,7 @@
           "temperature"
           "hyprland/workspaces"
         ];
-        modules-center = [
-          "clock"
-        ];
+        modules-center = [ "clock" ];
         modules-right = [
           "network"
           "memory"
@@ -55,7 +54,11 @@
           "format" = "{icon} {volume}%";
           "format-muted" = "󰖁 Muted";
           "format-icons" = {
-            "default" = ["" "" ""];
+            "default" = [
+              ""
+              ""
+              ""
+            ];
           };
           "on-click" = "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle";
           "tooltip" = false;
@@ -100,18 +103,20 @@
           "smooth-scrolling-threshold" = 5;
           "tooltip-format" = "{title} - {artist} ({elapsedTime:%M:%S}/{totalTime:%H:%M:%S})";
         };
-        network = let
-          nm-editor = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
-        in {
-          # interface = "wlo1";
-          format-wifi = "󰖩 {essid} ";
-          format-ethernet = "󰈀";
-          format-alt = "󰤨  {bandwidthDownBytes}";
-          format-disconnected = "󰤭";
-          tooltip-format = "{ipaddr}/{ifname} via {gwaddr} ({signalStrength}%)";
-          on-click-right = "${nm-editor}";
-          interval = 1;
-        };
+        network =
+          let
+            nm-editor = "${pkgs.networkmanagerapplet}/bin/nm-connection-editor";
+          in
+          {
+            # interface = "wlo1";
+            format-wifi = "󰖩 {essid} ";
+            format-ethernet = "󰈀";
+            format-alt = "󰤨  {bandwidthDownBytes}";
+            format-disconnected = "󰤭";
+            tooltip-format = "{ipaddr}/{ifname} via {gwaddr} ({signalStrength}%)";
+            on-click-right = "${nm-editor}";
+            interval = 1;
+          };
         "custom/powermenu" = {
           "format" = "";
           "on-click" = "pkill wlogout || wlogout --protocol layer-shell";

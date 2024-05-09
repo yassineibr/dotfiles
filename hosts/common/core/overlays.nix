@@ -1,3 +1,4 @@
-{outputs, ...}: {
-  nixpkgs.overlays = [outputs.overlays.unstable-packages];
+{ outputs, ... }:
+{
+  nixpkgs.overlays = [ outputs.overlays.unstable-packages ];
 }

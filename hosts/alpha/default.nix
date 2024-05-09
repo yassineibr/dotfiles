@@ -4,7 +4,8 @@
   inputs,
   lib,
   ...
-}: {
+}:
+{
   networking.hostName = "alpha";
 
   imports = [

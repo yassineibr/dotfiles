@@ -3,10 +3,9 @@
   pkgs,
   config,
   ...
-}: {
-  home.packages = [
-    pkgs.cliphist
-  ];
+}:
+{
+  home.packages = [ pkgs.cliphist ];
 
   wayland.windowManager.hyprland = {
     settings = {

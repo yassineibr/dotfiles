@@ -1,16 +1,11 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   programs.eza = {
     enable = true;
     enableAliases = true;
     icons = true;
 
-    extraOptions = [
-      "--group-directories-first"
-    ];
+    extraOptions = [ "--group-directories-first" ];
   };
 
   home.shellAliases = {

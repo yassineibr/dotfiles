@@ -1,4 +1,5 @@
-{outputs, ...}: {
+{ outputs, ... }:
+{
   # Importing all core files
   imports = [
     ./locale.nix

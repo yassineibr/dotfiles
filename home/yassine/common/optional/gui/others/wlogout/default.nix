@@ -1,4 +1,5 @@
-{config, ...}: {
+{ config, ... }:
+{
   programs.wlogout = {
     enable = true;
     layout = [

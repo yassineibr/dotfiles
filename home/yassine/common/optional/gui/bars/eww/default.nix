@@ -1,10 +1,8 @@
-{
-  pkgs,
-  lib,
-  ...
-}: let
+{ pkgs, lib, ... }:
+let
   hypr_sock = "$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock";
-in {
+in
+{
   programs.eww = {
     enable = true;
     package = pkgs.eww-wayland;

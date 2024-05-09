@@ -1,11 +1,6 @@
+{ inputs, pkgs, ... }:
 {
-  inputs,
-  pkgs,
-  ...
-}: {
-  imports = [
-    ../cache/hyprland.nix
-  ];
+  imports = [ ../cache/hyprland.nix ];
   # Fix wayland for electron based apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.brillo.enable = true;
@@ -23,5 +18,5 @@
     package = pkgs.unstable.hyprland;
   };
 
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
 }

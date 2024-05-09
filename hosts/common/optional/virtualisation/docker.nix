@@ -1,4 +1,5 @@
-{lib, ...}: {
+{ lib, ... }:
+{
   # systemd.services.docker.wantedBy = lib.mkForce [];
 
   virtualisation.docker = {

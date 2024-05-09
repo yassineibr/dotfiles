@@ -1,8 +1,5 @@
+{ config, pkgs, ... }:
 {
-  config,
-  pkgs,
-  ...
-}: {
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;

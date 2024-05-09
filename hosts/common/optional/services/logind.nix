@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   # lid switch
   services.logind.lidSwitch = "ignore";
   services.logind.lidSwitchExternalPower = "ignore";

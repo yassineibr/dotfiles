@@ -29,7 +29,7 @@ stdenv.mkDerivation rec {
     description = "Listen iio-sensor-proxy and auto change Hyprland output orientation";
     homepage = "https://github.com/JeanSchoeller/iio-hyprland";
     license = licenses.gpl3Only;
-    maintainers = with maintainers; [];
+    maintainers = with maintainers; [ ];
     mainProgram = "iio-hyprland";
     platforms = platforms.all;
   };

@@ -1,14 +1,11 @@
-{...}: {
-  imports = [
-    ../../bars/waybar
-  ];
+{ ... }:
+{
+  imports = [ ../../bars/waybar ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec = [
-        "pkill waybar; sleep 0.5 && waybar"
-      ];
+      exec = [ "pkill waybar; sleep 0.5 && waybar" ];
 
       bind = [
         # waybar

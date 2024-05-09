@@ -3,18 +3,20 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   inherit (pkgs) writeText;
   inherit (lib.strings) concatStringsSep;
   inherit (config) xdg;
-in {
+in
+{
   xdg.mimeApps = {
     enable = true;
     associations.added = {
-      "x-scheme-handler/pttp" = ["cisco-pt8.desktop.desktop"];
+      "x-scheme-handler/pttp" = [ "cisco-pt8.desktop.desktop" ];
     };
     defaultApplications = {
-      "x-scheme-handler/pttp" = ["cisco-pt8.desktop.desktop"];
+      "x-scheme-handler/pttp" = [ "cisco-pt8.desktop.desktop" ];
     };
   };
   xdg.enable = true;

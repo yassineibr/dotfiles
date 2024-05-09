@@ -1,14 +1,11 @@
-{...}: {
-  imports = [
-    ../../bars/eww
-  ];
+{ ... }:
+{
+  imports = [ ../../bars/eww ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec = [
-        "pkill eww; sleep 0.5 && eww open bar"
-      ];
+      exec = [ "pkill eww; sleep 0.5 && eww open bar" ];
 
       bind = [
         # Eww

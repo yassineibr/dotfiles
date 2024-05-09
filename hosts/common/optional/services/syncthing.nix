@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   services.syncthing = {
     enable = true;
     user = "yassine";
@@ -11,6 +12,14 @@
     configDir = "/home/yassine/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
 
-  networking.firewall.allowedTCPPorts = [8384 22000 4242 4243];
-  networking.firewall.allowedUDPPorts = [22000 21027];
+  networking.firewall.allowedTCPPorts = [
+    8384
+    22000
+    4242
+    4243
+  ];
+  networking.firewall.allowedUDPPorts = [
+    22000
+    21027
+  ];
 }

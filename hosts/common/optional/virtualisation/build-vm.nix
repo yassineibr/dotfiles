@@ -4,12 +4,13 @@
   inputs,
   config,
   ...
-}: {
+}:
+{
   virtualisation.vmVariant = {
     users.users.yassine = {
       initialPassword = "test";
     };
-    users.groups.test = {};
+    users.groups.test = { };
 
     virtualisation = {
       memorySize = 8192;
@@ -22,7 +23,9 @@
       ];
     };
 
-    environment.sessionVariables = {WLR_NO_HARDWARE_CURSORS = "1";};
+    environment.sessionVariables = {
+      WLR_NO_HARDWARE_CURSORS = "1";
+    };
 
     services.interception-tools.enable = lib.mkForce false;
   };
