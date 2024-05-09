@@ -1,12 +1,11 @@
 {
   pkgs,
-  lib,
   config,
   ...
 }:
 let
   configFile = pkgs.writeTextDir "config/sunshine.conf" ''
-    origin_web_ui_allowed=pc
+    # origin_web_ui_allowed=pc
   '';
 
   sunshinePort = 47989;
@@ -37,7 +36,7 @@ in
     ];
   };
 
-  environment.systemPackages = with pkgs; [ sunshineOverride ];
+  environment.systemPackages = [ sunshineOverride ];
 
   security.wrappers.sunshine = {
     owner = "root";
