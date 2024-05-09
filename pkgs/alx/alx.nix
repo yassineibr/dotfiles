@@ -1,10 +1,14 @@
-{ stdenv, lib, kernel }:
+{
+  stdenv,
+  lib,
+  kernel,
+}:
 
 let
   modPath = "drivers/net/ethernet/atheros/alx";
   modDestDir = "$out/lib/modules/${kernel.modDirVersion}/kernel/${modPath}";
-
-in stdenv.mkDerivation rec {
+in
+stdenv.mkDerivation rec {
   name = "alx-${kernel.version}";
 
   inherit (kernel) src version;
@@ -13,9 +17,7 @@ in stdenv.mkDerivation rec {
     cd ${modPath}
   '';
 
-  patches = [
-    ./linux-6.1.patch
-  ];
+  patches = [ ./linux-6.1.patch ];
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 

@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, config, ... }:
 let
   configFile = pkgs.writeTextDir "config/sunshine.conf" ''
     # origin_web_ui_allowed=pc
