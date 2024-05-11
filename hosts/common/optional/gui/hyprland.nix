@@ -14,8 +14,8 @@
 
   programs.hyprland = {
     enable = true;
-    #package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    package = pkgs.unstable.hyprland;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # package = pkgs.unstable.hyprland;
   };
 
   security.pam.services.hyprlock = { };

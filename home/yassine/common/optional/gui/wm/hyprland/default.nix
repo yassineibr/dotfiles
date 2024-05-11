@@ -6,7 +6,7 @@
 }:
 {
   imports = [
-    # inputs.hyprland.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
     ./hyprlock.nix
     ./cliphist.nix
     # ./vms.nix
@@ -52,7 +52,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.unstable.hyprland;
+    # package = pkgs.unstable.hyprland;
     settings = {
       exec = [ ];
       exec-once = [
