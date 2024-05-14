@@ -5,14 +5,16 @@
   ...
 }:
 {
-  imports = [ inputs.hyprpaper.homeManagerModules.default ];
+  # imports = [ inputs.hyprpaper.homeManagerModules.default ];
 
   services.hyprpaper = {
     enable = true;
-    splash = true;
+     settings = {
+      splash = true;
 
-    preloads = [ "${./images/nix-wallpaper.png}" ];
+      preloads = [ "${./images/nix-wallpaper.png}" ];
 
-    wallpapers = [ ", ${./images/nix-wallpaper.png}" ];
+      wallpapers = [ ", ${./images/nix-wallpaper.png}" ];
+     };
   };
 }
