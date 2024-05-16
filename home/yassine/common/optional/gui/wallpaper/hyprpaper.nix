@@ -12,9 +12,9 @@
     settings = {
       splash = true;
 
-      preloads = [ "${./images/nix-wallpaper.png}" ];
+      preload = [ "${./images/nix-wallpaper.png}" ];
 
-      wallpapers = [ ", ${./images/nix-wallpaper.png}" ];
+      wallpaper = [ ", ${./images/nix-wallpaper.png}" ];
     };
   };
 }
