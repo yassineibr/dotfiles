@@ -42,7 +42,7 @@
   qt = {
     enable = true;
     # platform theme "gtk" or "gnome"
-    platformTheme = "gnome";
+    platformTheme.name = "adwaita";
 
     # name of the qt theme
     style.name = "Adwaita-dark";
