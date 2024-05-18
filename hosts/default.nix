@@ -31,4 +31,12 @@
     };
     modules = [ ./omega ];
   };
+
+  epsilon = lib.nixosSystem {
+    system = "aarch64-linux";
+    specialArgs = {
+      inherit inputs outputs;
+    };
+    modules = [ ./epsilon ];
+  };
 }
