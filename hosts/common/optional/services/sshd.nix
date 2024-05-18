@@ -1,10 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   services.openssh = {
     enable = true;
     # require public key authentication for better security
     settings = {
-      PasswordAuthentication = false;
+      PasswordAuthentication = lib.mkDefault false;
       KbdInteractiveAuthentication = false;
       X11Forwarding = true;
     };
