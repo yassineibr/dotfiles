@@ -13,6 +13,9 @@ build host="":
 test host="":
     nixos-rebuild test --flake .#{{host}} --use-remote-sudo --show-trace --verbose
 
+boot host="":
+    nixos-rebuild boot --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+
 update:
     nix flake update
 

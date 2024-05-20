@@ -6,7 +6,7 @@
 
     extraConfig = "background_opacity 0.85";
     font = {
-      name = "JetBrainsMono Bold";
+      # name = "JetBrainsMono Bold";
       size = 12;
     };
   };
