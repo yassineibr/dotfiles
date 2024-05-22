@@ -28,13 +28,11 @@
     };
 
     # HyprWM Flakes
-    # hyprland.url = "github:hyprwm/Hyprland/ef23ef60c5641c5903f9cf40571ead7ad6aba1b9";
-    # hyprland.url = "github:hyprwm/Hyprland";
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    hyprlock.url = "github:hyprwm/Hyprlock";
+    hyprlock.url = "github:hyprwm/Hyprlock/18d2d2ba6af6ac76e4714fae2737a55d223716f8";
 
-    hyprpaper.url = "github:hyprwm/hyprpaper";
+    hyprpaper.url = "github:hyprwm/hyprpaper/b2f8274e1d52b0008f770f1136c9d58f77530202";
 
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
