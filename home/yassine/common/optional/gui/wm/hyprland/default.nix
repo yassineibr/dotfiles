@@ -20,6 +20,7 @@
   ];
 
   home.packages = with pkgs; [
+    xdg-utils
     gnome.nautilus
     playerctl
     grim
