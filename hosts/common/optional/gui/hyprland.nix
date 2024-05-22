@@ -1,6 +1,9 @@
 { inputs, pkgs, ... }:
 {
-  imports = [ ../cache/hyprland.nix ];
+  imports = [
+    ../cache/hyprland.nix
+    ./xdg.nix
+  ];
   # Fix wayland for electron based apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.brillo.enable = true;
