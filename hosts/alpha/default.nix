@@ -12,6 +12,7 @@
     ./hardware-configuration.nix
     ../common/optional/hardware/nvidia/laptop.nix
     ../common/optional/hardware/bluetooth.nix
+    ../common/optional/hardware/cross-compilation.nix
     ../common/optional/firewall.nix
 
     ./packages.nix
@@ -29,7 +30,8 @@
     ../common/optional/network/tailscale.nix
 
     ../common/optional/virtualisation/virt-manager.nix
-    ../common/optional/virtualisation/docker.nix
+    # ../common/optional/virtualisation/docker.nix
+    ../common/optional/virtualisation/podman.nix
 
     ../common/optional/services/syncthing.nix
     ../common/optional/services/logind.nix
