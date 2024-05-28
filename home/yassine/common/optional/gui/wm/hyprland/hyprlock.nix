@@ -9,16 +9,16 @@
 
   programs.hyprlock = {
     enable = true;
-     settings = {
+    settings = {
 
       backgrounds = [
-	{
-	  path = "/home/yassine/.cache/lockscreen.png";
-	  blur_size = 8;
-	  blur_passes = 1;
-	}
+        {
+          path = "/home/yassine/.cache/lockscreen.png";
+          blur_size = 8;
+          blur_passes = 1;
+        }
       ];
       labels = [ { text = "Hi $USER"; } ];
-     };
+    };
   };
 }

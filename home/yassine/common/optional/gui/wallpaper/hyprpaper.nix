@@ -9,12 +9,12 @@
 
   services.hyprpaper = {
     enable = true;
-     settings = {
+    settings = {
       splash = true;
 
       preloads = [ "${./images/nix-wallpaper.png}" ];
 
       wallpapers = [ ", ${./images/nix-wallpaper.png}" ];
-     };
+    };
   };
 }
