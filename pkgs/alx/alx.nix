@@ -3,12 +3,11 @@
   lib,
   kernel,
 }:
-
 let
   modPath = "drivers/net/ethernet/atheros/alx";
   modDestDir = "$out/lib/modules/${kernel.modDirVersion}/kernel/${modPath}";
 in
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   name = "alx-${kernel.version}";
 
   inherit (kernel) src version;
@@ -17,7 +16,14 @@ stdenv.mkDerivation rec {
     cd ${modPath}
   '';
 
-  patches = [ ./linux-6.1.patch ];
+  patches = (
+    if kernel.kernelOlder "6.0.3" then
+      [ ]
+    else if kernel.kernelOlder "6.3" then
+      [ ./linux-6.1.patch ]
+    else
+      [ ./linux-6.3.patch ]
+  );
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 
@@ -39,9 +45,9 @@ stdenv.mkDerivation rec {
     runHook postInstall
   '';
 
-  meta = with lib; {
+  meta = {
     description = "Alx wake-on-lan ethernet drivers";
     inherit (kernel.meta) license platforms;
-    broken = kernel.kernelOlder "6.0.3" || kernel.kernelAtLeast "6.3";
+    broken = kernel.kernelOlder "6.1";
   };
 }

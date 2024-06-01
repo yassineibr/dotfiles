@@ -3,11 +3,11 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -30,9 +30,9 @@
     # HyprWM Flakes
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
-    hyprlock.url = "github:hyprwm/Hyprlock/18d2d2ba6af6ac76e4714fae2737a55d223716f8";
+    hyprlock.url = "github:hyprwm/Hyprlock";
 
-    hyprpaper.url = "github:hyprwm/hyprpaper/b2f8274e1d52b0008f770f1136c9d58f77530202";
+    hyprpaper.url = "github:hyprwm/hyprpaper";
 
     hyprgrass = {
       url = "github:horriblename/hyprgrass";

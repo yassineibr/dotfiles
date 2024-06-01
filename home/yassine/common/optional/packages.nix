@@ -5,7 +5,7 @@
     okular
     alejandra
     spotify
-    nixops_unstable
+    # nixops_unstable
 
     just
     keepassxc
