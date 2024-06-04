@@ -39,6 +39,11 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
+    # AGS
+    matugen.url = "github:InioX/matugen?ref=v2.2.0";
+    ags.url = "github:Aylur/ags";
+    astal.url = "github:Aylur/astal";
+
     # Secure Boot
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.3.0";
