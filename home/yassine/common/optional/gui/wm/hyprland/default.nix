@@ -14,7 +14,7 @@
     ./tty-login.nix
     ../../launchers/rofi.nix
     ../../terminal/kitty.nix
-    ../../others/dunst.nix
+    # ../../others/dunst.nix
 
     ../../others/wlogout
   ];
