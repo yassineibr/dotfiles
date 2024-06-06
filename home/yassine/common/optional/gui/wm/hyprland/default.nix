@@ -132,6 +132,7 @@
         # focus_on_activate = true;
         # vfr = true;
         # vrr = 1;
+	initial_workspace_tracking = 0;
       };
       animations = {
         enabled = "yes";
