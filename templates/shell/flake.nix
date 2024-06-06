@@ -5,8 +5,9 @@
   };
 
   outputs =
-    { nixpkgs, systems }:
+    { self, nixpkgs, ... }@inputs:
     let
+      systems = import inputs.systems;
       lib = nixpkgs.lib;
 
       pkgsFor = lib.genAttrs systems (
