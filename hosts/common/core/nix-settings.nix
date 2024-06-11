@@ -6,9 +6,13 @@
   ...
 }:
 {
+
+  sops.secrets.nix-access-tokens-github = { };
+
   # nix Flakes
   nix.extraOptions = ''
     experimental-features = nix-command flakes
+    !include ${config.sops.secrets.nix-access-tokens-github.path}
   '';
 
   nix.gc = {
