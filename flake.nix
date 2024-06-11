@@ -24,7 +24,7 @@
     # NixVim
     nixvim = {
       url = "github:yassineibr/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     # HyprWM Flakes
