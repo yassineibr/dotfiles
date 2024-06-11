@@ -71,6 +71,7 @@
       ];
       monitor = [
         ",preferred,auto,auto"
+        "Unknown-1,disable"
         # "HDMI-A-1,4096x2160@60,auto,2"
         # "HDMI-A-1,3840x2160@60,auto,auto"
         # "HDMI-A-1,disable"
