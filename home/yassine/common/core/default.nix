@@ -5,6 +5,8 @@
     ./eza.nix
     ./zoxide.nix
     ./zsh.nix
+    ./sops.nix
+    ./nix.nix
   ];
 
   home.username = "yassine";
