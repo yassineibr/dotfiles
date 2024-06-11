@@ -7,10 +7,10 @@
     settings = {
       exec-once = [ "ags -b hypr" ];
 
-      # bind = [
-      #   # waybar
-      #   "$mainMod, W, exec, pkill -SIGUSR1 waybar" # Hide Waybar
-      # ];
+      bind = [
+        # waybar
+        "$mainMod, W, exec, ags -b hypr -r 'wallpaper.random()'" # Hide Waybar
+      ];
     };
   };
 }
