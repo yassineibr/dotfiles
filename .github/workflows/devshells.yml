@@ -1,4 +1,4 @@
-name: "build"
+name: "DevShells"
 
 on:
   push:
@@ -9,27 +9,23 @@ on:
     types: [opened, reopened]
 
 jobs:
-  nixos-configurations:
+  devshell:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       # Here we specify the matrix of our hosts and their target platform architectures
       matrix:
-        machine:
-          - host: alpha
+        shell:
+          - name: default
             platform: x86-64-linux
-          - host: beta
-            platform: x86-64-linux
-          - host: omega
-            platform: x86-64-linux
-          - host: epsilon
+          - name: default
             platform: aarch64-linux
 
     steps:
       - uses: actions/checkout@v4
 
       # We only run this if we are building an aarch64-linux system
-      - if: matrix.machine.platform == 'aarch64-linux'
+      - if: matrix.shell.platform == 'aarch64-linux'
         uses: docker/setup-qemu-action@v3
 
       - uses: DeterminateSystems/nix-installer-action@main
@@ -43,14 +39,12 @@ jobs:
 
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
-      # We build each system in a separate job, targeting the configuration using matrix.machine.host
-      - name: Build system
-        run: nix build .#nixosConfigurations.${{ matrix.machine.host }}.config.system.build.toplevel
+      - name: Build Shell
+        run: nix build .#${{ matrix.shell.platform }}.${{ matrix.shell.name }}
 
       # Once built, we login to Attic
       - name: Login to attic
         run: nix run nixpkgs#attic-client login cache ${{ secrets.ATTIC_URL }} ${{ secrets.ATTIC_TOKEN }}
 
-      # push the built system to our `system` cache!
-      - name: Push system
+      - name: Push Shell
         run: nix run nixpkgs#attic-client push system result -j 2
