@@ -5,11 +5,13 @@
       "https://nix-community.cachix.org"
       "https://cache.ibrahimi.xyz"
       "https://cuda-maintainers.cachix.org"
+      "https://attic.ibrahimi.xyz/system"
     ];
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "cache.ibrahimi.xyz:sJXcKBgYznXb0me/fndlO2l470PTBjeuNrV7/v5Fguk="
       "cuda-maintainers.cachix.org-1:0dq3bujKpuEPMCX6U4WylrUDZ9JyUG0VpVZa7CNfq5E="
+      "system:51hbrsnX2pmCB3z3otgdnt2aq+konejsg/bQ7Qu1W+o="
     ];
   };
 }
