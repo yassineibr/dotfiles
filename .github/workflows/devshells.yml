@@ -40,7 +40,7 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Build Shell
-        run: nix build .#${{ matrix.shell.platform }}.${{ matrix.shell.name }}
+        run: nix build .#devShells.${{ matrix.shell.platform }}.${{ matrix.shell.name }}
 
       # Once built, we login to Attic
       - name: Login to attic
