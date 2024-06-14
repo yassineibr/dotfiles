@@ -13,6 +13,10 @@ jobs:
         machine:
           - host: alpha
             platform: x86-64-linux
+          - host: beta
+            platform: x86-64-linux
+          - host: omega
+            platform: x86-64-linux
           - host: epsilon
             platform: aarch64-linux
 
