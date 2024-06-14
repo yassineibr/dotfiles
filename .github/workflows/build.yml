@@ -47,6 +47,8 @@ jobs:
             substituters = ${{ secrets.ATTIC_URL }}/system?priority=43 https://nix-community.cachix.org?priority=41 https://numtide.cachix.org?priority=42 https://cache.nixos.org/ https://hyprland.cachix.org
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= system:51hbrsnX2pmCB3z3otgdnt2aq+konejsg/bQ7Qu1W+o= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE= hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=
 
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
       # We build each system in a separate job, targeting the configuration using matrix.machine.host
       - name: Build system
         run: nix build .#nixosConfigurations.${{ matrix.machine.host }}.config.system.build.toplevel
