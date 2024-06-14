@@ -2,6 +2,11 @@ name: "build"
 
 on:
   push:
+    branches:
+      - 'main'
+      - 'releases/**'
+  pull_request:
+    types: [opened, reopened]
 
 jobs:
   build:
@@ -19,7 +24,6 @@ jobs:
             platform: x86-64-linux
           - host: epsilon
             platform: aarch64-linux
-
 
     steps:
       - uses: actions/checkout@v4
