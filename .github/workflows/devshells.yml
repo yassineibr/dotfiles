@@ -17,7 +17,7 @@ jobs:
       matrix:
         shell:
           - name: default
-            platform: x86-64-linux
+            platform: x86_64-linux
           - name: default
             platform: aarch64-linux
 
