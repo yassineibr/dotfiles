@@ -430,11 +430,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1718359900,
-        "narHash": "sha256-eVf70Ps7O8R3DEEfSMW54V07kxkRv5IaWMxSa77hMu4=",
+        "lastModified": 1718365532,
+        "narHash": "sha256-2wd1ytcpvnBlhTxP1O/G4PJSY3fKuTxQLDxp+kFP4Sg=",
         "ref": "refs/heads/main",
-        "rev": "b2590b58c51094424a9651d8df37dfab838b5bbb",
-        "revCount": 4824,
+        "rev": "a9d53a2252f7ec084e2487d18777e2df01c8c351",
+        "revCount": 4825,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -763,11 +763,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1718140626,
-        "narHash": "sha256-uibiuc+4BILo4C1/+KXcLU0/zfT6vRD7ZTUO+xAVrZE=",
+        "lastModified": 1718288467,
+        "narHash": "sha256-/hcCxvJ9zA7qIzap8NDuXeT6gsiwndc3vjtP0xwwDIQ=",
         "owner": "NixNeovim",
         "repo": "NixNeovimPlugins",
-        "rev": "520a736706c799d1f04d0059b6afde1c26307e9f",
+        "rev": "c1b8248d6bda2150fe023713156936c801b5a3e6",
         "type": "github"
       },
       "original": {
@@ -1021,11 +1021,11 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1718226362,
-        "narHash": "sha256-H94/rPJSldVxp7ittwED3xbmz/vKkc8lcO6kQfLB+ks=",
+        "lastModified": 1718366238,
+        "narHash": "sha256-v1g8aQJxFZaL5lwIizFKHoq7/z8ZFOHf/zKUdcrijiQ=",
         "owner": "yassineibr",
         "repo": "nixvim",
-        "rev": "771ccbc278e6756ddf2f2ffb4f659145e2c390ad",
+        "rev": "133167c8fb2139597b3e6a9666c5282b4ddd79a7",
         "type": "github"
       },
       "original": {
@@ -1049,11 +1049,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1718202302,
-        "narHash": "sha256-urU2mKEhKCaThtRDM54oUj40A+m3wYSnWjfkoxbuhLU=",
+        "lastModified": 1718358971,
+        "narHash": "sha256-8REGUp3RB2/3Q3Ibu00onhj1HyLh/Z8oRU6D3/EQ08w=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "cc9023fb1d74fad3b7b704a1c161a2ce9f378431",
+        "rev": "e51b8b9b5c91aa49981d78c4aa1ac08a50150103",
         "type": "github"
       },
       "original": {
