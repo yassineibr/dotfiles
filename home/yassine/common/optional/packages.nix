@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
+    attic-client
+
+
     evince
     okular
     alejandra
