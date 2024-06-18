@@ -49,6 +49,8 @@
       url = "github:nix-community/lanzaboote/v0.4.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    systems.url = "github:nix-systems/default-linux";
   };
 
   outputs =
@@ -63,7 +65,7 @@
       inherit (self) outputs;
 
       lib = nixpkgs.lib // home-manager.lib;
-      systems = [ "x86_64-linux" "aarch64-linux"];
+      systems = import inputs.systems;
 
       pkgsFor = lib.genAttrs systems (
         system:
