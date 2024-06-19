@@ -1009,11 +1009,11 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1718740580,
-        "narHash": "sha256-Rep3dq5Sgh5+JH19KJNohYKLf323JBBpN3Tgn0o4QAc=",
+        "lastModified": 1718741177,
+        "narHash": "sha256-sDjTtHcM9uNR9gHSUexpyzsqWi5n1GqbQ4h/MfbF70Q=",
         "owner": "yassineibr",
         "repo": "nixvim",
-        "rev": "7dd508da1268f7fcc6498b32015403a32ba140fe",
+        "rev": "4efec3099ec60d62a8654e0b9cdf3c47ba6ec23c",
         "type": "github"
       },
       "original": {
