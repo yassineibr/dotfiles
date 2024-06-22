@@ -2,7 +2,7 @@
 {
   home.packages = with pkgs; [
     attic-client
-
+    yazi
 
     evince
     okular
