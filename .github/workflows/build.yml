@@ -145,12 +145,10 @@ jobs:
           # if no hit, restore current versions of individual caches
           restore-prefixes-all-matches: |
             nix-${{ runner.os }}-${{ matrix.machine.platform }}-
-            nix-common-${{ runner.os }}-${{ matrix.machine.platform }}-
           # do purge caches
           purge: true
           # purge old versions of the `common` cache and any versions of individual caches
           purge-prefixes: |
-            nix-${{ runner.os }}-${{ matrix.machine.platform }}-
             nix-common-${{ runner.os }}-${{ matrix.machine.platform }}-
           # created more than 0 seconds ago relative to the start of the `Post Restore` phase
           purge-created: 0
