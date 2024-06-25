@@ -17,12 +17,12 @@ jobs:
       # Here we specify the matrix of our hosts and their target platform architectures
       matrix:
         machine:
-          - host: alpha
-            platform: x86_64-linux
-            large: true
-          # - host: beta
+          # - host: alpha
           #   platform: x86_64-linux
           #   large: true
+          - host: beta
+            platform: x86_64-linux
+            large: true
           # - host: omega
           #   platform: x86_64-linux
           #   large: true
@@ -69,9 +69,9 @@ jobs:
         uses: nix-community/cache-nix-action@v5
         with:
               # restore and save a cache using this key
-              primary-key: nix-${{ runner.os }}-${{ matrix.machine.host }}-${{ hashFiles('**/*.nix') }}
+              primary-key: nix-${{ runner.os }}-${{ matrix.machine.platform }}-${{ matrix.machine.host }}-${{ hashFiles('**/*.nix') }}
               # if there's no cache hit, restore a cache by this prefix
-              restore-prefixes-first-match: nix-${{ runner.os }}-
+              restore-prefixes-first-match: nix-${{ runner.os }}-${{ matrix.machine.platform }}-
               # collect garbage until Nix store size (in bytes) is at most this number
               # before trying to save a new cache
               gc-max-store-size-linux: 1073741824
