@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'main'
+      - 'feat/ci_cache'
       - 'releases/**'
   pull_request:
     types: [opened, reopened]
@@ -18,12 +19,12 @@ jobs:
         machine:
           - host: alpha
             platform: x86_64-linux
-          - host: beta
-            platform: x86_64-linux
-          - host: omega
-            platform: x86_64-linux
-          - host: epsilon
-            platform: aarch64-linux
+          # - host: beta
+          #   platform: x86_64-linux
+          # - host: omega
+          #   platform: x86_64-linux
+          # - host: epsilon
+          #   platform: aarch64-linux
 
     steps:
       - uses: actions/checkout@v4
@@ -48,16 +49,30 @@ jobs:
       - if: matrix.machine.platform == 'aarch64-linux'
         uses: docker/setup-qemu-action@v3
 
-      - uses: DeterminateSystems/nix-installer-action@main
+      - name: Install Nix
+        uses: nixbuild/nix-quick-install-action@v25
         with:
-          # We add all the config for extra platforms, other binary caches and to raise the number of connections that can be made
-          extra-conf: |
-            fallback = true
+          nix_conf: |
+            # access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            keep-outputs = true
             extra-platforms = aarch64-linux i686-linux
             substituters = ${{ secrets.ATTIC_URL }}/system?priority=43 https://nix-community.cachix.org?priority=41 https://numtide.cachix.org?priority=42 https://cache.nixos.org/ https://hyprland.cachix.org
             trusted-public-keys = cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= system:51hbrsnX2pmCB3z3otgdnt2aq+konejsg/bQ7Qu1W+o= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE= hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=
 
-      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Restore and cache Nix store
+        uses: nix-community/cache-nix-action@v1
+        with:
+          key: nix-${{ matrix.os }}-job-${{ hashfiles('**/flake.nix', '**/flake.lock') }}
+          linux-gc-enabled: true
+          linux-max-store-size: 5000000000
+          macos-gc-enabled: true
+          macos-max-store-size: 5000000000
+          restore-keys: |
+            nix-${{ matrix.os }}-job-
+
+      - name: Remove old cache profiles
+        run: rm -rf /nix/var/nix/profiles/cache
 
       # We build each system in a separate job, targeting the configuration using matrix.machine.host
       - name: Build system
