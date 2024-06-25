@@ -20,15 +20,15 @@ jobs:
           - host: alpha
             platform: x86_64-linux
             large: true
-          # - host: beta
-          #   platform: x86_64-linux
-          #   large: true
+          - host: beta
+            platform: x86_64-linux
+            large: true
           - host: omega
             platform: x86_64-linux
             large: true
-          # - host: epsilon
-          #   platform: aarch64-linux
-          #   large: false
+          - host: epsilon
+            platform: aarch64-linux
+            large: false
 
     steps:
       - uses: actions/checkout@v4
@@ -76,20 +76,17 @@ jobs:
               # collect garbage until Nix store size (in bytes) is at most this number
               # before trying to save a new cache
               gc-max-store-size-linux: 1073741824
-              # # do purge caches
-              # purge: true
-              # # purge all versions of the cache
-              # purge-prefixes: nix-${{ runner.os }}-
-              # # created more than this number of seconds ago relative to the start of the `Post Restore` phase
-              # purge-created: 0
-              # # except the version with the `primary-key`, if it exists
-              # purge-primary-key: never
+              # do purge caches
+              purge: true
+              # purge all versions of the cache
+              purge-prefixes: nix-${{ runner.os }}-${{ matrix.machine.platform }}-${{ matrix.machine.host }}-
+              # created more than this number of seconds ago relative to the start of the `Post Restore` phase
+              purge-created: 0
+              # except the version with the `primary-key`, if it exists
+              purge-primary-key: never
 
       - name: Remove old cache profiles
         run: rm -rf /nix/var/nix/profiles/cache
-
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
 
       # We build each system in a separate job, targeting the configuration using matrix.machine.host
       - name: Build system
