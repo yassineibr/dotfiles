@@ -61,13 +61,23 @@ jobs:
 
 
       - name: Restore and cache Nix store
-        uses: nix-community/cache-nix-action@v1
+        uses: nix-community/cache-nix-action@v5
         with:
-          key: nix-${{ matrix.os }}-job-${{ hashfiles('**/flake.nix', '**/flake.lock') }}
-          linux-gc-enabled: true
-          linux-max-store-size: 5000000000
-          restore-keys: |
-            nix-${{ matrix.os }}-job-
+              # restore and save a cache using this key
+              primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix') }}
+              # if there's no cache hit, restore a cache by this prefix
+              restore-prefixes-first-match: nix-${{ runner.os }}-
+              # collect garbage until Nix store size (in bytes) is at most this number
+              # before trying to save a new cache
+              gc-max-store-size-linux: 1073741824
+              # do purge caches
+              purge: true
+              # purge all versions of the cache
+              purge-prefixes: cache-${{ runner.os }}-
+              # created more than this number of seconds ago relative to the start of the `Post Restore` phase
+              purge-created: 0
+              # except the version with the `primary-key`, if it exists
+              purge-primary-key: never
 
       - name: Remove old cache profiles
         run: rm -rf /nix/var/nix/profiles/cache
