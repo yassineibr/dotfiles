@@ -57,7 +57,6 @@ jobs:
       - name: Install Nix
         uses: nixbuild/nix-quick-install-action@v28
         with:
-          nix_version: "2.18.2"
           nix_conf: |
             # access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
             keep-outputs = true
