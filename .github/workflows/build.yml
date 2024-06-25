@@ -17,14 +17,14 @@ jobs:
       # Here we specify the matrix of our hosts and their target platform architectures
       matrix:
         machine:
-          - host: alpha
-            platform: x86_64-linux
+          # - host: alpha
+          #   platform: x86_64-linux
           # - host: beta
           #   platform: x86_64-linux
           # - host: omega
           #   platform: x86_64-linux
-          # - host: epsilon
-          #   platform: aarch64-linux
+          - host: epsilon
+            platform: aarch64-linux
 
     steps:
       - uses: actions/checkout@v4
