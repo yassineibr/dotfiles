@@ -104,7 +104,7 @@ jobs:
   merge-similar-caches:
     name: Merge similar caches
     needs: nixos-configurations
-    if: always()
+    if: success() || failure()
     permissions:
       actions: write
     runs-on: ubuntu-latest
