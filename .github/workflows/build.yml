@@ -23,9 +23,9 @@ jobs:
           - host: beta
             platform: x86_64-linux
             large: true
-          # - host: omega
-          #   platform: x86_64-linux
-          #   large: true
+          - host: omega
+            platform: x86_64-linux
+            large: true
           - host: epsilon
             platform: aarch64-linux
             large: false
