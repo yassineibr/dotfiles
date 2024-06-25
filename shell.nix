@@ -26,6 +26,13 @@
   ...
 }:
 {
+  ci = pkgs.mkShell {
+    NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
+    nativeBuildInputs = with pkgs; [
+      attic-client
+    ];
+  };
+
   default = pkgs.mkShell {
     NIX_CONFIG = "extra-experimental-features = nix-command flakes repl-flake";
     nativeBuildInputs = with pkgs; [
