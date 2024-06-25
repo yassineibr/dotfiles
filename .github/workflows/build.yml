@@ -17,33 +17,38 @@ jobs:
       # Here we specify the matrix of our hosts and their target platform architectures
       matrix:
         machine:
-          # - host: alpha
-          #   platform: x86_64-linux
+          - host: alpha
+            platform: x86_64-linux
+            large: true
           # - host: beta
           #   platform: x86_64-linux
+          #   large: true
           # - host: omega
           #   platform: x86_64-linux
+          #   large: true
           - host: epsilon
             platform: aarch64-linux
+            large: false
 
     steps:
       - uses: actions/checkout@v4
 
-      # - name: Free Disk Space (Ubuntu)
-      #   uses: jlumbroso/free-disk-space@main
-      #   with:
-      #     # this might remove tools that are actually needed,
-      #     # if set to "true" but frees about 6 GB
-      #     tool-cache: false
+      - name: Free Disk Space (Ubuntu)
+        if: matrix.machine.large == true
+        uses: jlumbroso/free-disk-space@main
+        with:
+          # this might remove tools that are actually needed,
+          # if set to "true" but frees about 6 GB
+          tool-cache: false
         
-      #     # all of these default to true, but feel free to set to
-      #     # "false" if necessary for your workflow
-      #     android: true
-      #     dotnet: true
-      #     haskell: true
-      #     large-packages: true
-      #     docker-images: true
-      #     swap-storage: true
+          # all of these default to true, but feel free to set to
+          # "false" if necessary for your workflow
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          docker-images: true
+          swap-storage: true
 
       # We only run this if we are building an aarch64-linux system
       - if: matrix.machine.platform == 'aarch64-linux'
@@ -64,7 +69,7 @@ jobs:
         uses: nix-community/cache-nix-action@v5
         with:
               # restore and save a cache using this key
-              primary-key: nix-${{ runner.os }}-${{ hashFiles('**/*.nix') }}
+              primary-key: nix-${{ runner.os }}-${{ matrix.machine.host }}-${{ hashFiles('**/*.nix') }}
               # if there's no cache hit, restore a cache by this prefix
               restore-prefixes-first-match: nix-${{ runner.os }}-
               # collect garbage until Nix store size (in bytes) is at most this number
