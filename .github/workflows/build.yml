@@ -9,8 +9,22 @@ on:
     types: [opened, reopened]
 
 jobs:
-  setup:
+  nixos-configurations:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      # Here we specify the matrix of our hosts and their target platform architectures
+      matrix:
+        machine:
+          - host: alpha
+            platform: x86_64-linux
+          - host: beta
+            platform: x86_64-linux
+          - host: omega
+            platform: x86_64-linux
+          - host: epsilon
+            platform: aarch64-linux
+
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +45,8 @@ jobs:
           swap-storage: true
 
       # We only run this if we are building an aarch64-linux system
-      - uses: docker/setup-qemu-action@v3
+      - if: matrix.machine.platform == 'aarch64-linux'
+        uses: docker/setup-qemu-action@v3
 
       - uses: DeterminateSystems/nix-installer-action@main
         with:
@@ -44,24 +59,6 @@ jobs:
 
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
-  nixos-configurations:
-    runs-on: ubuntu-latest
-    needs: setup
-    strategy:
-      fail-fast: false
-      # Here we specify the matrix of our hosts and their target platform architectures
-      matrix:
-        machine:
-          - host: alpha
-            platform: x86_64-linux
-          - host: beta
-            platform: x86_64-linux
-          - host: omega
-            platform: x86_64-linux
-          - host: epsilon
-            platform: aarch64-linux
-
-    steps:
       # We build each system in a separate job, targeting the configuration using matrix.machine.host
       - name: Build system
         run: nix build .#nixosConfigurations.${{ matrix.machine.host }}.config.system.build.toplevel
