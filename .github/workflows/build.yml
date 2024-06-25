@@ -65,8 +65,8 @@ jobs:
 
       # Once built, we login to Attic
       - name: Login to attic
-        run: nix develop .#ci --command attic-client login cache ${{ secrets.ATTIC_URL }} ${{ secrets.ATTIC_TOKEN }}
+        run: nix develop .#ci --command attic login cache ${{ secrets.ATTIC_URL }} ${{ secrets.ATTIC_TOKEN }}
 
       # push the built system to our `system` cache!
       - name: Push system
-        run: nix develop .#ci --command attic-client push system result -j 2
+        run: nix develop .#ci --command attic push system result -j 2
