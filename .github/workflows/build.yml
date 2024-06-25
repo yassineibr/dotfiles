@@ -71,7 +71,7 @@ jobs:
               # restore and save a cache using this key
               primary-key: nix-${{ runner.os }}-${{ matrix.machine.platform }}-${{ matrix.machine.host }}-${{ hashFiles('**/*.nix') }}
               # if there's no cache hit, restore a cache by this prefix
-              restore-prefixes-first-match: nix-${{ runner.os }}-${{ matrix.machine.platform }}-
+              restore-prefixes-first-match: nix-${{ runner.os }}-${{ matrix.machine.platform }}-${{ matrix.machine.host }}
               # collect garbage until Nix store size (in bytes) is at most this number
               # before trying to save a new cache
               gc-max-store-size-linux: 1073741824
