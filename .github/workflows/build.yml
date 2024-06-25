@@ -119,14 +119,6 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v4
 
-      - name: Rebase
-        run: |
-          ${{
-              github.head_ref
-                && format('gh pr checkout {0}', github.event.pull_request.number) 
-                || format('git pull --rebase origin {0}', github.ref_name) 
-            }}
-
       - uses: nixbuild/nix-quick-install-action@v28
 
       - name: Restore and cache Nix store
