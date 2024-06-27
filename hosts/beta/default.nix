@@ -12,7 +12,6 @@
 
     # ./gnome.nix
     ../common/optional/gui/hyprland.nix
-    ../common/optional/services/greetd.nix
 
     ../common/optional/pipewire.nix
 

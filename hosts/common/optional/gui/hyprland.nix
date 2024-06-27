@@ -2,6 +2,7 @@
 {
   imports = [
     ../cache/hyprland.nix
+    ../services/greetd.nix
     ./xdg.nix
   ];
   # Fix wayland for electron based apps

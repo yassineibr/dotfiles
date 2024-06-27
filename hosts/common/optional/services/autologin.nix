@@ -1,11 +1,10 @@
 { pkgs, ... }:
 let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
   session = "ssh-agent Hyprland";
   username = "yassine";
 in
 {
-  import = [
+  imports = [
 	  ./greetd.nix
 	];
   # Enable automatic login for the user.
