@@ -12,11 +12,13 @@
 
     # ./gnome.nix
     ../common/optional/gui/hyprland.nix
+    ../common/optional/services/greetd.nix
 
     ../common/optional/pipewire.nix
 
     ../common/optional/virtualisation/virt-manager.nix
     ../common/optional/virtualisation/docker.nix
+    # ../common/optional/virtualisation/podman.nix
 
     ../common/optional/network/network-manager.nix
     ../common/optional/network/tailscale.nix
@@ -26,6 +28,7 @@
     ../common/users/yassine
 
     ../common/optional/cache
+    ../common/optional/services/sshd.nix
   ];
 
   hardware.graphics = {

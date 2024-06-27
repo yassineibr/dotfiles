@@ -5,6 +5,9 @@ let
   username = "yassine";
 in
 {
+  import = [
+	  ./greetd.nix
+	];
   # Enable automatic login for the user.
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "yassine";
@@ -14,15 +17,10 @@ in
   # systemd.services."autovt@tty1".enable = false;
 
   services.greetd = {
-    enable = true;
     settings = {
       initial_session = {
         command = "${session}";
         user = "${username}";
-      };
-      default_session = {
-        command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time -cmd ${session}";
-        user = "greeter";
       };
     };
   };
