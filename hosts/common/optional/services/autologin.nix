@@ -4,9 +4,7 @@ let
   username = "yassine";
 in
 {
-  imports = [
-	  ./greetd.nix
-	];
+  imports = [ ./greetd.nix ];
   # Enable automatic login for the user.
   # services.xserver.displayManager.autoLogin.enable = true;
   # services.xserver.displayManager.autoLogin.user = "yassine";
