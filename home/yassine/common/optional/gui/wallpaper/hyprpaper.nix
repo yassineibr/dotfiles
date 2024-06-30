@@ -12,9 +12,9 @@
     settings = {
       splash = true;
 
-      preload = [ "${./images/nix-wallpaper.png}" ];
+      preload = [ "${config.stylix.image}" ];
 
-      wallpaper = [ ", ${./images/nix-wallpaper.png}" ];
+      wallpaper = [ ", ${config.stylix.image}" ];
     };
   };
 }

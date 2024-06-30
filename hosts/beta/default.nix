@@ -12,6 +12,7 @@
 
     # ./gnome.nix
     ../common/optional/gui/hyprland.nix
+    ../common/optional/gui/stylix.nix
 
     ../common/optional/pipewire.nix
 

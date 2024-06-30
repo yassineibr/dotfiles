@@ -51,6 +51,9 @@
     };
 
     systems.url = "github:nix-systems/default-linux";
+
+    stylix.url = "github:danth/stylix";
+
   };
 
   outputs =
