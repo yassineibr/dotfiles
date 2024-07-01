@@ -241,6 +241,9 @@
           # Screen sharing
           "$mainMod,  bracketleft, exec, hyprctl keyword monitor HDMI-A-1,preferred,auto,auto"
           "$mainMod, bracketright, exec, hyprctl keyword monitor HDMI-A-1,preferred,auto,auto,mirror,eDP-1"
+
+          # Monitor
+          "$mainMod, D, swapactiveworkspaces, 1 0"
         ]
         ++ (
           # workspaces
