@@ -39,7 +39,7 @@ jobs:
           # this might remove tools that are actually needed,
           # if set to "true" but frees about 6 GB
           tool-cache: false
-        
+
           # all of these default to true, but feel free to set to
           # "false" if necessary for your workflow
           android: true
@@ -54,6 +54,18 @@ jobs:
         uses: docker/setup-qemu-action@v3
 
       - name: Install Nix
+        if: github.event_name != 'pull_request'
+        uses: nixbuild/nix-quick-install-action@v28
+        with:
+          nix_conf: |
+            # access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            keep-outputs = true
+            extra-platforms = aarch64-linux i686-linux
+            substituters = ${{ secrets.ATTIC_URL }}/system?priority=43 https://nix-community.cachix.org?priority=41 https://numtide.cachix.org?priority=42 https://cache.nixos.org/ https://hyprland.cachix.org
+            trusted-public-keys = system:51hbrsnX2pmCB3z3otgdnt2aq+konejsg/bQ7Qu1W+o= cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY= nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs= numtide.cachix.org-1:2ps1kLBUWjxIneOy1Ik6cQjb41X0iXVXeHigGmycPPE= hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=
+
+      - name: Install Nix
+        if: github.event_name == 'pull_request'
         uses: nixbuild/nix-quick-install-action@v28
         with:
           nix_conf: |
