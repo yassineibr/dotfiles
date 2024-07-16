@@ -16,15 +16,15 @@ jobs:
       # Here we specify the matrix of our hosts and their target platform architectures
       matrix:
         machine:
-          - host: [alpha, beta, omega]
+          - host: alpha
             platform: x86_64-linux
             large: true
-          # - host: beta
-          #   platform: x86_64-linux
-          #   large: true
-          # - host: omega
-          #   platform: x86_64-linux
-          #   large: true
+          - host: beta
+            platform: x86_64-linux
+            large: true
+          - host: omega
+            platform: x86_64-linux
+            large: true
           - host: epsilon
             platform: aarch64-linux
             large: false
