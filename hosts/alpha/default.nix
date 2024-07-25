@@ -46,6 +46,10 @@
   ];
 
   programs.nix-ld.enable = true;
+  networking.firewall.enable = false;
+  virtualisation.docker.daemon.settings = {
+    data-root = "/home/docker/docker";
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
