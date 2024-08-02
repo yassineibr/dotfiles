@@ -13,6 +13,11 @@ build host="":
 test host="":
     nixos-rebuild test --flake .#{{host}} --use-remote-sudo --show-trace --verbose
 
+vm host="":
+    sudo nixos-rebuild build-vm --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+    sudo -E ./result/bin/run-*-vm
+    sudo rm -f ./*.qcow2 ./result
+
 update:
     nix flake update
 
