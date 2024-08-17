@@ -36,14 +36,9 @@
     fsType = "vfat";
   };
 
-  fileSystems."/home" = {
-    device = "/dev/disk/by-label/NIXOS-HOME";
-    fsType = "ext4";
-  };
-
   swapDevices = [
     {
-      device = "/home/swapfile";
+      device = "/var/swapfile";
       size = 16 * 1024;
     }
   ];
