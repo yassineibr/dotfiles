@@ -21,7 +21,8 @@ in
       background = [
         {
           monitor = "";
-          path = "/home/yassine/.cache/lockscreen.png";
+          # path = "/home/yassine/.cache/lockscreen.png";
+          path = "screenshot";
           blur_size = 8;
           blur_passes = 1;
         }
