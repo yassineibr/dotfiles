@@ -19,14 +19,17 @@
     ./common/optional/gui/theme.nix
 
     ./common/optional/gui/wm/hyprland
-    ./common/optional/gui/wm/hyprland/touch.nix
+    # ./common/optional/gui/wm/hyprland/touch.nix
     # ./common/optional/gui/wm/hyprland/waybar.nix
     ./common/optional/gui/wm/hyprland/ags.nix
   ];
 
   wayland.windowManager.hyprland = {
     settings = {
-      monitor = [ "eDP-1,preferred,auto,1.2" ];
+      monitor = [
+        "eDP-1,preferred,auto,1.2"
+        "HDMI-A-1,preferred,auto-up,1"
+      ];
     };
   };
 
