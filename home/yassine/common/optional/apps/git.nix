@@ -10,5 +10,11 @@
       gpg.format = "ssh";
       user.signingkey = "~/.ssh/id_git.pub";
     };
+    includes = [
+      {
+        condition = "gitdir:~/work/";
+        path = "/home/yassine/.config/git/config.work";
+      }
+    ];
   };
 }
