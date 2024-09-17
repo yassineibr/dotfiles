@@ -32,4 +32,5 @@ in
   };
 
   home-manager.users.yassine = import ../../../../home/yassine/${config.networking.hostName}.nix;
+  home-manager.backupFileExtension = "hm.bac";
 }
