@@ -48,3 +48,4 @@ jobs:
 
       - name: Push Shell
         run: nix develop .#ci --command attic push system result -j 2
+        continue-on-error: true

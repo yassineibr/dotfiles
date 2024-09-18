@@ -86,3 +86,4 @@ jobs:
       # push the built system to our `system` cache!
       - name: Push system
         run: nix develop .#ci --command attic push system result -j 2
+        continue-on-error: true
