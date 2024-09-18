@@ -1,6 +1,9 @@
 default:
   @just --list
 
+boot host="":
+    nixos-rebuild boot --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+
 deploy host="":
     nixos-rebuild switch --flake .#{{host}} --use-remote-sudo
 
