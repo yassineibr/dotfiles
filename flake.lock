@@ -57,11 +57,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1728828936,
-        "narHash": "sha256-nZpL9tdyb1ZqJw9scvmpWghNnyEgQCUKV6izLTzRztY=",
+        "lastModified": 1728898809,
+        "narHash": "sha256-NBTAFjdHOoZSYza7KlDjVVXWDEo4/KZgd2x3HKrJh+Q=",
         "owner": "Aylur",
         "repo": "astal",
-        "rev": "27e76f4fed37623b605070098ec956114cb73714",
+        "rev": "bdb23e20f171da7c769cba9e393d7e406e563a78",
         "type": "github"
       },
       "original": {
@@ -480,11 +480,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1728861919,
-        "narHash": "sha256-VTbYjwDEaYyALE73n4HaWqxy+3Mg+x2yvVGScZ72Zkk=",
+        "lastModified": 1728930677,
+        "narHash": "sha256-s0Nyh9m1u+xfnaELM3XRtJPUUyjyHS8kwhNYXFucUXM=",
         "ref": "refs/heads/main",
-        "rev": "e7fd0f5aec85c11a8eaf5e1abf8504f0a6d0710e",
-        "revCount": 5339,
+        "rev": "01c2ff34ddcb5995409c33c2b549e93b98b56d6b",
+        "revCount": 5343,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -873,11 +873,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1728570173,
-        "narHash": "sha256-4LHKqLuvkj5OVcaAeTRFJYuQbgAlX5WuobgehREMzOk=",
+        "lastModified": 1728829310,
+        "narHash": "sha256-Bwy4gh8b8ZXuiTAsveY93sMlEpfCLA2ciI3AoLpp03Q=",
         "owner": "NixNeovim",
         "repo": "NixNeovimPlugins",
-        "rev": "236eefcc4de6b3a5888da69cc4a4034143b69121",
+        "rev": "747a6da6950ee5a04beeea7ac0c53b78bd54c2ae",
         "type": "github"
       },
       "original": {
@@ -1131,11 +1131,11 @@
         "systems": "systems_8"
       },
       "locked": {
-        "lastModified": 1728803344,
-        "narHash": "sha256-5SC67ywCG30HN9V3ZtUiGw2TBeFyAl0CtaJJ4GhPxJ8=",
+        "lastModified": 1728894767,
+        "narHash": "sha256-AiSNLwiZ/CDlBlturu7HoUpqGulLKwycc96V3GAHxDQ=",
         "owner": "yassineibr",
         "repo": "nixvim",
-        "rev": "01fef0b9b4becd8a6c24098be8acf8270446c8be",
+        "rev": "1aced6c5a4d75291b417da15da81f486ddef2019",
         "type": "github"
       },
       "original": {
@@ -1160,11 +1160,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1728736326,
-        "narHash": "sha256-JYy050VI7AQyDPHjZ/48rdNFfVvdbR0wPtsRA/4nc7E=",
+        "lastModified": 1728829992,
+        "narHash": "sha256-722PdOQ4uTTAOyS3Ze4H7LXDNVi9FecKbLEvj3Qu0hM=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "2e1b3b7d43f485866573f70411a4797ce38e27bb",
+        "rev": "619e24366e8ad34230d65a323d26ca981bfa6927",
         "type": "github"
       },
       "original": {
