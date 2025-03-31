@@ -66,7 +66,7 @@ jobs:
 
 
       - name: Restore and cache Nix store
-        uses: nix-community/cache-nix-action@v5
+        uses: nix-community/cache-nix-action@v6
         with:
           # restore and save a cache using this key
           primary-key: nix-${{ runner.os }}-${{ matrix.machine.platform }}-${{ matrix.machine.host }}-${{ hashFiles('**/*.nix', 'flake.lock') }}
