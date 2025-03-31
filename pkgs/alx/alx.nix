@@ -21,8 +21,10 @@ stdenv.mkDerivation {
       [ ]
     else if kernel.kernelOlder "6.3" then
       [ ./linux-6.1.patch ]
-    else
+    else if kernel.kernelOlder "6.12" then
       [ ./linux-6.3.patch ]
+    else
+      [ ./linux-6.12.patch ]
   );
 
   nativeBuildInputs = kernel.moduleBuildDependencies;

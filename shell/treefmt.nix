@@ -6,8 +6,8 @@
 
   # Format nix files
   # programs.alejandra.enable = true;
-  programs.nixfmt-rfc-style.enable = true;
-  programs.nixfmt-rfc-style.package = pkgs.unstable.nixfmt-rfc-style;
+  programs.nixfmt.enable = true;
+  # programs.nixfmt.package = pkgs.unstable.nixfmt-rfc-style;
 
   # Format markdown files
   programs.mdformat.enable = true;

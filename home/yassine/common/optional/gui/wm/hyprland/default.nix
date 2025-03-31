@@ -21,7 +21,7 @@
 
   home.packages = with pkgs; [
     xdg-utils
-    gnome.nautilus
+    nautilus
     playerctl
     grim
     wl-clipboard
@@ -120,10 +120,10 @@
           passes = 1;
         };
 
-        drop_shadow = false;
-        shadow_range = 4;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(1a1a1aee)";
+        # drop_shadow = false;
+        # shadow_range = 4;
+        # shadow_render_power = 3;
+        # "col.shadow" = "rgba(1a1a1aee)";
       };
 
       misc = {
@@ -222,7 +222,7 @@
 
           # "$mainMod, Tab, workspace, previous"
           "$mainMod SHIFT, space, togglefloating, "
-          "$mainMod SHIFT, F, fakefullscreen, "
+          # "$mainMod SHIFT, F, fakefullscreen, "
           # "$mainMod, return, swapnext, "
 
           # screenshot

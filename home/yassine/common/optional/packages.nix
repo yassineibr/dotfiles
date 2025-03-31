@@ -5,7 +5,7 @@
     yazi
 
     evince
-    okular
+    kdePackages.okular
     alejandra
     spotify
     # nixops_unstable

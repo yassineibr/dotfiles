@@ -12,5 +12,5 @@
   home.username = "yassine";
   home.homeDirectory = "/home/${config.home.username}";
 
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 }

@@ -5,6 +5,8 @@
   imports = [
     ./hardware-configuration.nix
     ../common/optional/hardware/nvidia/desktop.nix
+    ../common/optional/hardware/cross-compilation.nix
+    ../common/optional/hardware/openrgb.nix
     ../common/optional/firewall.nix
 
     ./packages.nix
@@ -38,6 +40,10 @@
 
     ./wol.nix
   ];
+
+  programs.nix-ld.enable = true;
+
+  programs.steam.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

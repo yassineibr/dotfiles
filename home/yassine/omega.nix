@@ -20,11 +20,11 @@
 
     ./common/optional/gui/wm/hyprland
     ./common/optional/gui/wm/hyprland/nvidia.nix
-    # ./common/optional/gui/wm/hyprland/waybar.nix
-    ./common/optional/gui/wm/hyprland/ags.nix
+    ./common/optional/gui/wm/hyprland/waybar.nix
+    # ./common/optional/gui/wm/hyprland/ags.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   home.stateVersion = "23.11";
 }

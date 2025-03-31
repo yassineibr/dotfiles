@@ -22,6 +22,7 @@ in
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEqgfTS1lt6os0E7w9iyClSvlXSapzQBtIV9wyI9gnK1 yassine"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIItiOURWobhCmj8SErugcEBJyhSd7V1Eqcm4u8wptfRY yassine"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGIoA72LlLkQ7J3x68OBcrMRttmThrQquH93+QsP+83G" # S20
     ];
     hashedPasswordFile = config.sops.secrets.yassine-password.path;
   };

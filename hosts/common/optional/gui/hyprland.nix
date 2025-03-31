@@ -22,12 +22,12 @@
     # package = pkgs.unstable.hyprland;
   };
 
-  hardware.opengl = {
-    package = pkgs.unstable.mesa.drivers;
+  hardware.graphics = {
+    package = pkgs.unstable.mesa;
 
     # if you also want 32-bit support (e.g for Steam)
     # driSupport32Bit = true;
-    package32 = pkgs.unstable.pkgsi686Linux.mesa.drivers;
+    package32 = pkgs.unstable.pkgsi686Linux.mesa;
   };
 
   security.pam.services.hyprlock = { };
