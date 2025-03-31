@@ -40,7 +40,7 @@ jobs:
           # this might remove tools that are actually needed,
           # if set to "true" but frees about 6 GB
           tool-cache: false
-        
+
           # all of these default to true, but feel free to set to
           # "false" if necessary for your workflow
           android: true
@@ -55,7 +55,7 @@ jobs:
         uses: docker/setup-qemu-action@v3
 
       - name: Install Nix
-        uses: nixbuild/nix-quick-install-action@v28
+        uses: nixbuild/nix-quick-install-action@v30
         with:
           nix_conf: |
             # access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
@@ -126,7 +126,7 @@ jobs:
           # this might remove tools that are actually needed,
           # if set to "true" but frees about 6 GB
           tool-cache: true
-        
+
           # all of these default to true, but feel free to set to
           # "false" if necessary for your workflow
           android: true
@@ -136,7 +136,7 @@ jobs:
           docker-images: true
           swap-storage: true
 
-      - uses: nixbuild/nix-quick-install-action@v28
+      - uses: nixbuild/nix-quick-install-action@v30
 
       - name: Restore and cache Nix store
         uses: nix-community/cache-nix-action@v5
