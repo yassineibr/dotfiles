@@ -24,7 +24,5 @@
     # ./common/optional/gui/wm/hyprland/ags.nix
   ];
 
-  # nixpkgs.config.allowUnfree = true;
-
   home.stateVersion = "23.11";
 }
