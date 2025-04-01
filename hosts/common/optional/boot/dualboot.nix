@@ -14,7 +14,7 @@
       #   sudo ${pkgs.grub2}/bin/grub-reboot 2 && sudo ${pkgs.systemd}/bin/reboot
       # '')
       (pkgs.writeShellScriptBin "winboot" ''
-        windows_hex=$(${pkgs.efibootmgr} | grep Windows | awk '{ print $1 }' | sed "s/Boot\([0-9A-Z]*\)\*\?/\1/")
+        windows_hex=$(${pkgs.efibootmgr}/bin/efibootmgr | grep Windows | awk '{ print $1 }' | sed "s/Boot\([0-9A-Z]*\)\*\?/\1/")
         sudo ${pkgs.efibootmgr}/bin/efibootmgr --bootnext $windows_hex && sudo ${pkgs.systemd}/bin/reboot
       '')
     ];

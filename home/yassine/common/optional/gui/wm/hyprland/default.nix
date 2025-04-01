@@ -5,6 +5,8 @@
   ...
 }:
 {
+  wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
+
   imports = [
     inputs.hyprland.homeManagerModules.default
     ./hyprlock.nix
@@ -55,6 +57,10 @@
     enable = true;
     # package = pkgs.unstable.hyprland;
     settings = {
+      "ecosystem:no_update_news" = true;
+      # ecosystem = {
+      # 	no_update_news = true;
+      # };
       exec = [ ];
       exec-once = [
         "[workspace 2 silent] brave"
@@ -68,6 +74,7 @@
         "XDG_SESSION_TYPE,wayland"
         "WLR_NO_HARDWARE_CURSORS,1"
         "XCURSOR_SIZE,24"
+        # "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
       ];
       monitor = [
         ",preferred,auto,auto"
@@ -77,6 +84,10 @@
         # "HDMI-A-1,disable"
       ];
       # monitor= "HDMI-A-1,preferred,auto,auto,mirror,eDP-1";
+
+      cursor = {
+        no_hardware_cursors = 1;
+      };
 
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
@@ -198,7 +209,7 @@
           "ALT,Tab,bringactivetotop,"
 
           "$mainMod, H, cyclenext, prev"
-          "$mainMod, L, cyclenext,"
+          # "$mainMod, L, cyclenext,"
           "$mainMod, J, splitratio, -0.1"
           "$mainMod, K, splitratio, +0.1"
 
@@ -233,8 +244,8 @@
           "$mainMod, G, exec, gamemode"
 
           # Hyprlock
-          "$mainMod, L, exec, grim '/home/yassine/.cache/lockscreen.png' && hyprlock"
-          "$mainMod SHIFT, L, exec, grim '/home/yassine/.cache/lockscreen.png' && systemctl suspend && hyprlock"
+          "$mainMod, L, exec, hyprlock"
+          "$mainMod SHIFT, L, exec, systemctl suspend && hyprlock"
           "$mainMod, minus, workspace, 11"
           "$mainMod SHIFT, minus, movetoworkspace, 11"
 
@@ -294,9 +305,21 @@
       workspace = [
         "11,monitor:HDMI-A-1"
         "special:magic, on-created-empty:kitty, gapsout:50"
-        "special:socials, on-created-empty:brave --new-window discordapp.com/app web.whatsapp.com web.telegram.org, gapsout:25"
-        "special:work, on-created-empty:brave --new-window mail.google.com/mail/u/3/ trello.com/b/hTXY8u5O/pfe-2024-cloud-pentest, gapsout:25"
+        "special:socials, on-created-empty:brave --profile-directory=Default --new-window discordapp.com/app web.whatsapp.com web.telegram.org, gapsout:25"
+        # "special:work, on-created-empty:brave --new-window mail.google.com/mail/u/3/ trello.com/b/hTXY8u5O/pfe-2024-cloud-pentest, gapsout:25"
+        "special:work, on-created-empty:brave --profile-directory='Profile 3', gapsout:15"
         "special:music, on-created-empty:spotify, gapsout:50"
+      ];
+      windowrule = [
+        "float, title:^(Picture in picture)$"
+        "size 624 351, title:(Picture in picture)"
+        "pin, title:^(Picture in picture)$"
+        "move 100%-w-5 100%-w-5, title:(Picture in picture)"
+
+        "workspace:special:meet:slient, title:^(meet.google.com is sharing your screen.)$"
+        # "float, title:^(Firefox)$"
+        # "size 800 450, title:(Firefox)"
+        # "pin, title:^(Firefox)$"
       ];
 
       xwayland.force_zero_scaling = true;

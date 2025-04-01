@@ -5,6 +5,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
@@ -41,6 +42,8 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
     # AGS
     matugen.url = "github:InioX/matugen?ref=v2.2.0";
     ags.url = "github:Aylur/ags";
@@ -48,7 +51,7 @@
 
     # Secure Boot
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.1";
+      url = "github:nix-community/lanzaboote/v0.4.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -74,7 +77,10 @@
         import nixpkgs {
           inherit system;
           config.allowUnfree = true;
-          overlays = [ outputs.overlays.unstable-packages ];
+          overlays = [
+            outputs.overlays.unstable-packages
+            inputs.hyprpanel.overlay
+          ];
         }
       );
 

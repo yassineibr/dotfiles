@@ -11,6 +11,10 @@
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
+  # Disable Libvirtd
+  systemd.services.libvirtd.wantedBy = lib.mkForce [ ];
+  systemd.services.libvirt-guests.wantedBy = lib.mkForce [ ];
+
   programs.virt-manager.enable = true;
 
   # Allow dhcp req from libvirt guests
@@ -30,6 +34,8 @@
         "virbr2"
         "virbr3"
         "virbr4"
+        "br0"
+        "qemu-br0"
       ]
   );
 }
