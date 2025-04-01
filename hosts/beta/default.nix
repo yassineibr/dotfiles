@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 {
   networking.hostName = "beta"; # Define your hostname.
 
@@ -34,8 +38,6 @@
     enable = true;
     enable32Bit = true;
   };
-
-  hardware.opengl.driSupport = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
