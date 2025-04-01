@@ -20,5 +20,27 @@
       system = final.system;
       config.allowUnfree = true;
     };
+
+    netbird = _prev.netbird.overrideAttrs (oldAttrs: rec {
+      version = "0.39.2";
+
+      src = _prev.fetchFromGitHub {
+        owner = "netbirdio";
+        repo = "netbird";
+        rev = "v${version}";
+        # sha256 = "sha256-Tm7MIgLfPbt3MFetYebYW+aeOgg55+lBXU1rXRIDfms=";
+        sha256 = "sha256-K1qnQfkptMFviWWqzDA+yju/L/aMNTyO3qDHzMJnXzU=";
+      };
+
+      vendorHash = "sha256-yNFyW1D2gFkt2VDTyiaDXPw0zrT4KBQTe72x0Jh0jOs=";
+
+      ldflags = [
+        "-s"
+        "-w"
+        "-X github.com/netbirdio/netbird/version.version=${version}"
+        "-X main.builtBy=nix"
+      ];
+    });
   };
+
 }

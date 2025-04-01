@@ -5,10 +5,10 @@
   ...
 }:
 {
-  # imports = [ inputs.hyprpaper.homeManagerModules.default ];
 
   services.hyprpaper = {
     enable = true;
+    package = inputs.hyprpaper.packages.${pkgs.system}.default;
     settings = {
       splash = true;
 

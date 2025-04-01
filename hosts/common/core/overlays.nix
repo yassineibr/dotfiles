@@ -1,4 +1,7 @@
-{ outputs, ... }:
+{ outputs, inputs, ... }:
 {
-  nixpkgs.overlays = [ outputs.overlays.unstable-packages ];
+  nixpkgs.overlays = [
+    outputs.overlays.unstable-packages
+    inputs.hyprpanel.overlay
+  ];
 }

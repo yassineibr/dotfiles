@@ -4,6 +4,7 @@
     ../cache/hyprland.nix
     ../services/greetd.nix
     ./xdg.nix
+    inputs.hyprland.nixosModules.default
   ];
   # Fix wayland for electron based apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -18,7 +19,7 @@
 
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     # package = pkgs.unstable.hyprland;
   };
 

@@ -43,6 +43,9 @@
       age
       ssh-to-age
       sops
+
+      nvfetcher
+      lazygit
     ];
   };
 }

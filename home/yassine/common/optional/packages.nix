@@ -4,6 +4,9 @@
     attic-client
     yazi
 
+    signal-desktop
+    discord
+
     evince
     kdePackages.okular
     alejandra

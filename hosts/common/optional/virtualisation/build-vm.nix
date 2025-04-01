@@ -7,10 +7,22 @@
 }:
 {
   virtualisation.vmVariant = {
-    users.users.yassine = {
-      initialPassword = "test";
+    services.greetd = {
+      settings = {
+        initial_session = {
+          command = "ssh-agent Hyprland";
+          user = "yassine";
+        };
+      };
     };
-    users.groups.test = { };
+
+    virtualisation.sharedDirectories = {
+      ssh-keys = {
+        source = "/etc/ssh";
+        target = "/etc/ssh";
+        securityModel = "none";
+      };
+    };
 
     virtualisation = {
       memorySize = 8192;
