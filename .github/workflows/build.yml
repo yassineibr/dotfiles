@@ -22,12 +22,15 @@ jobs:
           - host: beta
             platform: x86_64-linux
             large: true
-          - host: omega
+          - host: gamma
             platform: x86_64-linux
             large: true
           - host: epsilon
             platform: aarch64-linux
             large: false
+          - host: omega
+            platform: x86_64-linux
+            large: true
 
     steps:
       - uses: actions/checkout@v4
