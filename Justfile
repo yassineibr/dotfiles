@@ -46,3 +46,15 @@ gc: gc-profile gc-system
 fmt:
     nix fmt
 
+remote-debug host="":
+    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose --target-host {{host}}
+
+remote-build host="":
+    nixos-rebuild build --flake .#{{host}} --use-remote-sudo --show-trace --verbose --target-host {{host}}
+
+remote-test host="":
+    nixos-rebuild test --flake .#{{host}} --use-remote-sudo --show-trace --verbose --target-host {{host}}
+
+
+sops-update-keys:
+  sops updatekeys ./hosts/common/secrets.yml
