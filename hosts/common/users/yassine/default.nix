@@ -23,6 +23,7 @@ in
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEqgfTS1lt6os0E7w9iyClSvlXSapzQBtIV9wyI9gnK1 yassine"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIItiOURWobhCmj8SErugcEBJyhSd7V1Eqcm4u8wptfRY yassine"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGIoA72LlLkQ7J3x68OBcrMRttmThrQquH93+QsP+83G" # S20
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBL1sXeE+8kFEBX3iC9CJDPy3MayuooZd3EBwIsObTni yassine@alpha"
     ];
     hashedPasswordFile = config.sops.secrets.yassine-password.path;
   };
