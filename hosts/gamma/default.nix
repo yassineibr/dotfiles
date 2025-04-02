@@ -24,7 +24,7 @@
 
     ../common/users/yassine
 
-    # ./wg-quick.nix
+    ./wg-quick.nix
   ];
 
   services.tailscale.useRoutingFeatures = "both";
