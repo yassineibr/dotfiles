@@ -12,10 +12,9 @@
     ./hyprlock.nix
     ./cliphist.nix
     # ./vms.nix
-    ../../wallpaper/hyprpaper.nix
+    # ../../wallpaper/hyprpaper.nix
     ./tty-login.nix
     ../../launchers/rofi.nix
-    ../../terminal/kitty.nix
     # ../../others/dunst.nix
 
     ../../others/wlogout
@@ -34,7 +33,7 @@
       if [ "$HYPRGAMEMODE" = 1 ] ; then
               hyprctl --batch "\
                   keyword animations:enabled 0;\
-                  keyword decoration:drop_shadow 0;\
+                  # keyword decoration:drop_shadow 0;\
                   keyword decoration:blur:enabled 0;\
                   keyword general:gaps_in 0;\
                   keyword general:gaps_out 0;\
@@ -191,7 +190,6 @@
       "$mainMod" = "SUPER";
       bind =
         [
-          "$mainMod, RETURN, exec, kitty"
           "$mainMod, B, exec, brave"
           "$mainMod, C, killactive, "
           "$mainMod SHIFT, Q, exit, "
@@ -304,7 +302,6 @@
 
       workspace = [
         "11,monitor:HDMI-A-1"
-        "special:magic, on-created-empty:kitty, gapsout:50"
         "special:socials, on-created-empty:brave --profile-directory=Default --new-window discordapp.com/app web.whatsapp.com web.telegram.org, gapsout:25"
         # "special:work, on-created-empty:brave --new-window mail.google.com/mail/u/3/ trello.com/b/hTXY8u5O/pfe-2024-cloud-pentest, gapsout:25"
         "special:work, on-created-empty:brave --profile-directory='Profile 3', gapsout:15"

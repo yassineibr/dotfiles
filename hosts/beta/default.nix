@@ -39,6 +39,20 @@
     enable32Bit = true;
   };
 
+  # hardware.opengl.driSupport = true;
+
+  networking.firewall.enable = false;
+  services.fwupd.enable = true;
+
+  services.netbird.enable = true;
+
+  programs.goldwarden = {
+    enable = true;
+    useSshAgent = true;
+  };
+
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-qt;
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

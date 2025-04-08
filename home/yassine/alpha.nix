@@ -22,6 +22,7 @@
     ./common/optional/gui/wm/hyprland/nvidia.nix
     ./common/optional/gui/wm/hyprland/waybar.nix
     # ./common/optional/gui/wm/hyprland/ags.nix
+    ./common/optional/gui/terminal/kitty.nix
   ];
 
   wayland.windowManager.hyprland = {

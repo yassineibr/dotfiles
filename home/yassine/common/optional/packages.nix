@@ -26,6 +26,7 @@
     obs-studio
     wireshark
     zellij
+    tmux
     moonlight-qt
 
     vlc
