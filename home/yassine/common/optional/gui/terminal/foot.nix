@@ -19,7 +19,7 @@
   wayland.windowManager.hyprland = {
     settings = {
       workspace = [
-        "special:magic, on-created-empty:kitty, gapsout:50"
+        "special:magic, on-created-empty:foot, gapsout:50"
       ];
       bind = [
         "$mainMod, RETURN, exec, foot"

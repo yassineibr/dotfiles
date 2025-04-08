@@ -17,7 +17,7 @@
         "special:magic, on-created-empty:kitty, gapsout:50"
       ];
       bind = [
-        "$mainMod, RETURN, exec, foot"
+        "$mainMod, RETURN, exec, kitty"
       ];
     };
   };
