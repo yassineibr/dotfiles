@@ -32,4 +32,10 @@
   };
 
   security.pam.services.hyprlock = { };
+
+  # gnome polkit and keyring are used for hyprland sessions
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.greetd.enableGnomeKeyring = true;
+
+  # security.pam.services.login.kwallet.enable = true;
 }

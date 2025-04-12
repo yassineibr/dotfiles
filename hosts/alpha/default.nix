@@ -2,6 +2,7 @@
   config,
   pkgs,
   inputs,
+  outputs,
   lib,
   ...
 }:
@@ -11,6 +12,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common/optional/hardware/nvidia/laptop.nix
+    # ../common/optional/hardware/pcie-vfio.nix
     ../common/optional/hardware/bluetooth.nix
     ../common/optional/hardware/cross-compilation.nix
     ../common/optional/firewall.nix
@@ -28,6 +30,7 @@
 
     ../common/optional/network/network-manager.nix
     ../common/optional/network/tailscale.nix
+    ../common/optional/network/netbird/client.nix
 
     ../common/optional/virtualisation/virt-manager.nix
     ../common/optional/virtualisation/docker.nix
@@ -36,6 +39,7 @@
     ../common/optional/services/syncthing.nix
     ../common/optional/services/logind.nix
     ../common/optional/services/sshd.nix
+    ../common/optional/gpg.nix
 
     ../common/optional/fonts.nix
 

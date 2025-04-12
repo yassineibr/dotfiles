@@ -8,13 +8,14 @@
     discord
 
     evince
-    kdePackages.okular
+    # kdePackages.okular
     alejandra
     spotify
     # nixops_unstable
 
     just
     keepassxc
+    bitwarden
     imv
     lf
 

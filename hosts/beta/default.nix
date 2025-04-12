@@ -25,6 +25,7 @@
 
     ../common/optional/network/network-manager.nix
     ../common/optional/network/tailscale.nix
+    ../common/optional/network/netbird/client.nix
 
     ../common/optional/fonts.nix
 
@@ -43,8 +44,6 @@
 
   networking.firewall.enable = false;
   services.fwupd.enable = true;
-
-  services.netbird.enable = true;
 
   programs.goldwarden = {
     enable = true;
