@@ -22,13 +22,13 @@
     };
 
     netbird = _prev.netbird.overrideAttrs (oldAttrs: rec {
-      version = "0.41.0";
+      version = "0.41.1";
 
       src = _prev.fetchFromGitHub {
         owner = "netbirdio";
         repo = "netbird";
         rev = "v${version}";
-        sha256 = "sha256-xVk5vAU9G4HTaHmK1i8HvvYUxN0B2T2w+Vj4Ypg7N4s=";
+        sha256 = "sha256-ENmItrJFc9sqO54y3YSeL71pqDj0zlrpnjY0g9JOxBA=";
       };
 
       vendorHash = "sha256-vy725OvkYLyCDYEmnPpXJWqyofb29GiP4GkLn1GInm0=";
