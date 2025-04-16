@@ -9,6 +9,9 @@
       name = "JetBrainsMono Bold";
       size = 12;
     };
+    settings = {
+      shell = "nu";
+    };
   };
 
   wayland.windowManager.hyprland = {

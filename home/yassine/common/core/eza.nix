@@ -6,6 +6,7 @@
     enableBashIntegration = true;
     enableZshIntegration = true;
     # enableAliases = true;
+    enableNushellIntegration = false;
     icons = "auto";
 
     extraOptions = [ "--group-directories-first" ];

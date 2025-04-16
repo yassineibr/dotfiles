@@ -7,6 +7,7 @@
 {
   imports = [
     ./common/core
+    ./common/core/nushell.nix
     ./common/optional/packages.nix
 
     ./common/optional/apps/git.nix
@@ -29,7 +30,7 @@
     settings = {
       monitor = [
         "eDP-1,preferred,auto,1.2"
-        "HDMI-A-1,preferred,auto-right,1"
+        "HDMI-A-1,preferred,auto-up,1"
       ];
     };
   };

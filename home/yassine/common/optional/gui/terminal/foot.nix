@@ -8,6 +8,7 @@
 
         # font = "Fira Code:size=11";
         dpi-aware = "yes";
+        shell = "nu";
       };
 
       mouse = {

@@ -17,17 +17,17 @@
         };
       }
     ];
-    oh-my-zsh = {
-      enable = true;
-      plugins = [
-        "docker-compose"
-        "docker"
-      ];
-      theme = "dst";
-    };
+    # oh-my-zsh = {
+    #   enable = true;
+    #   plugins = [
+    #     "docker-compose"
+    #     "docker"
+    #   ];
+    #   theme = "dst";
+    # };
     initExtra = ''
-      bindkey '^f' autosuggest-accept
-    '';
+      			bindkey '^f' autosuggest-accept
+      		'';
     dotDir = ".config/zsh";
     history.path = "$HOME/.config/zsh/.zsh_history";
   };
