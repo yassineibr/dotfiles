@@ -46,6 +46,7 @@
 
       nvfetcher
       lazygit
+      nh
     ];
   };
 }
