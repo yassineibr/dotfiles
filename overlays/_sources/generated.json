@@ -1,0 +1,25 @@
+{
+    "netbird": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "netbird",
+        "passthru": {
+            "vendorHash": "sha256-vy725OvkYLyCDYEmnPpXJWqyofb29GiP4GkLn1GInm0="
+        },
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "netbirdio",
+            "repo": "netbird",
+            "rev": "v0.41.3",
+            "sha256": "sha256-Nr72ZBe+wENQh/4QOMLA9Zvo2HDw9NK/42d2iyBqwvE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.41.3"
+    }
+}

@@ -1,5 +1,8 @@
 # This file defines overlays
 { inputs, ... }:
+let
+  generated = import ./_sources/generated.nix;
+in
 {
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
@@ -13,25 +16,38 @@
     # });
   };
 
+  nvfetcher = final: prev: {
+    sources = generated {
+      inherit (final)
+        fetchurl
+        fetchgit
+        fetchFromGitHub
+        dockerTools
+        ;
+    };
+  };
+
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
-  unstable-packages = final: _prev: {
+  unstable-packages = final: _prev: rec {
+    sources = generated {
+      inherit (final)
+        fetchurl
+        fetchgit
+        fetchFromGitHub
+        dockerTools
+        ;
+    };
+
     unstable = import inputs.nixpkgs-unstable {
       system = final.system;
       config.allowUnfree = true;
     };
 
     netbird = _prev.netbird.overrideAttrs (oldAttrs: rec {
-      version = "0.41.1";
+      inherit (sources.netbird) src vendorHash;
 
-      src = _prev.fetchFromGitHub {
-        owner = "netbirdio";
-        repo = "netbird";
-        rev = "v${version}";
-        sha256 = "sha256-ENmItrJFc9sqO54y3YSeL71pqDj0zlrpnjY0g9JOxBA=";
-      };
-
-      vendorHash = "sha256-vy725OvkYLyCDYEmnPpXJWqyofb29GiP4GkLn1GInm0=";
+      version = final.lib.strings.removePrefix "v" sources.netbird.version;
 
       ldflags = [
         "-s"

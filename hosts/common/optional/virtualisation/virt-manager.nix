@@ -11,6 +11,7 @@
     onBoot = "ignore";
     onShutdown = "shutdown";
   };
+
   # Disable Libvirtd
   systemd.services.libvirtd.wantedBy = lib.mkForce [ ];
   systemd.services.libvirt-guests.wantedBy = lib.mkForce [ ];
