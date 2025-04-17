@@ -31,5 +31,7 @@
     moonlight-qt
 
     vlc
+
+    sshs
   ];
 }
