@@ -16,6 +16,7 @@
     ./common/optional/xdg-settings.nix
 
     ./common/optional/apps/nvim.nix
+    ./common/optional/apps/sshs.nix
 
     ./common/optional/gui/theme.nix
 

@@ -4,7 +4,7 @@
     attic-client
     yazi
 
-    signal-desktop
+    signal-desktop-bin
     discord
 
     evince
@@ -31,7 +31,5 @@
     moonlight-qt
 
     vlc
-
-    sshs
   ];
 }
