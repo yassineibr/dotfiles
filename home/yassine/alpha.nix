@@ -17,6 +17,7 @@
 
     ./common/optional/apps/nvim.nix
     ./common/optional/apps/sshs.nix
+    ./common/optional/apps/yazi.nix
 
     ./common/optional/gui/theme.nix
 

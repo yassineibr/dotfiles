@@ -1,11 +1,10 @@
 { inputs, pkgs, ... }:
 {
   home.packages = with pkgs; [
-		sshs
-	];
+    sshs
+  ];
 
   home.shellAliases = {
     "s" = "sshs -e";
-    "vim" = "nvim";
   };
 }

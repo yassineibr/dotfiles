@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     attic-client
-    yazi
 
     signal-desktop-bin
     discord
