@@ -5,7 +5,7 @@
         "extract": null,
         "name": "netbird",
         "passthru": {
-            "vendorHash": "sha256-/A7lyR81Cv6hZ5EV+J8IgSfOqjkRmH8TQMUd1AV199Q="
+            "vendorHash": "sha256-/iqWVDqQOTFP5OZDrgq5gAH7NmHneQlf5+wAzIyoEPw="
         },
         "pinned": false,
         "src": {
@@ -15,11 +15,11 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.42.0",
-            "sha256": "sha256-O7txPZYplZVM5ZwIIxQdGleEZoYeTaxKqMEGuT2abQM=",
+            "rev": "v0.43.0",
+            "sha256": "sha256-HmNd5MyplQ8iwpaxhEnomASIwx4VE3Qv70sURxqDzdo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.42.0"
+        "version": "v0.43.0"
     }
 }
