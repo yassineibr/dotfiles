@@ -15,6 +15,7 @@
     just
     keepassxc
     bitwarden
+    bitwarden-cli
     imv
     lf
 
