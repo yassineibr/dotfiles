@@ -15,7 +15,7 @@
     # ../../wallpaper/hyprpaper.nix
     ./tty-login.nix
     ../../launchers/rofi.nix
-    # ../../others/dunst.nix
+    ../../others/dunst.nix
 
     ../../others/wlogout
   ];

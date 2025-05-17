@@ -7,7 +7,7 @@
         width = 300;
         height = 200;
         offset = "30x50";
-        origin = "top-center";
+        origin = "top-right";
         transparency = 0;
         padding = 20;
         horizontal_padding = 20;
