@@ -25,7 +25,7 @@
     #   ];
     #   theme = "dst";
     # };
-    initExtra = ''
+    initContent = ''
       			bindkey '^f' autosuggest-accept
       		'';
     dotDir = ".config/zsh";
