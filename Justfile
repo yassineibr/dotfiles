@@ -24,6 +24,11 @@ vm host="":
 update:
     nix flake update
 
+nvfetcher:
+	cd overlays && nvfetcher
+	just fmt
+	git add overlays
+
 upgrade: update deploy
 
 gc-profile:
