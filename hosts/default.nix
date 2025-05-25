@@ -23,6 +23,15 @@
     modules = [ ./beta ];
   };
 
+  # Thinkpad M710q I7
+  gamma = lib.nixosSystem {
+    system = "x86_64-linux";
+    specialArgs = {
+      inherit inputs outputs;
+    };
+    modules = [ ./gamma ];
+  };
+
   # Desktop
   omega = lib.nixosSystem {
     system = "x86_64-linux";
