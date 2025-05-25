@@ -18,7 +18,7 @@
 
     ../common/optional/network/tailscale.nix
     ../common/optional/services/sshd.nix
-    # ../common/optional/hardware/prometheus.nix
+    ../common/optional/hardware/prometheus/exporters
 
     ../common/optional/cache
 
