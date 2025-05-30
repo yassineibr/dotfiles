@@ -15,11 +15,11 @@
             "name": null,
             "owner": "netbirdio",
             "repo": "netbird",
-            "rev": "v0.45.1",
-            "sha256": "sha256-55Vyhzt0WtJRq9CcH7mXw7cklAce/lvC1S+MBMDnMbo=",
+            "rev": "v0.45.2",
+            "sha256": "sha256-lvulqneKFxmZ/EQDmQbx1SzsfZxLb8tGyLFJo8z9U0w=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.45.1"
+        "version": "v0.45.2"
     }
 }
