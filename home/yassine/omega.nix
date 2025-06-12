@@ -7,6 +7,7 @@
 {
   imports = [
     ./common/core
+    ./common/core/nushell.nix
     ./common/optional/packages.nix
 
     ./common/optional/apps/git.nix
@@ -15,6 +16,7 @@
     ./common/optional/xdg-settings.nix
 
     ./common/optional/apps/nvim.nix
+    ./common/optional/apps/sshs.nix
 
     ./common/optional/gui/theme.nix
 
