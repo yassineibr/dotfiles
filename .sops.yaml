@@ -4,6 +4,9 @@ keys:
     - &alpha age1xs8wq47r0z3vwm07fe0zd5jt4vzmy6zvz4s5czfp99q2svr2d5aqvjec0h
     - &beta age1fduxce42kleecefwtu28lprufs5rsuw07kp9rszgkn2kjsgmzgxs5mxrwc
     - &omega age1llsz9y0zl02d42maknvrjnf66tqz2cgq83m7hlgqpquc8vvx0phs0qmh8u
+    - &gamma age1q0azy7tauvu6u2q5lyndtdhlt537etz08ahyygt7p0trdsqws3jqpnpasl
+  - &home-manager:
+    - &home-gamma age1qvddpctmj2k0hmeu428a4l952rv8pj79hwntf5qcemmr9cjf7qwqk996gg
 creation_rules:
   - path_regex: secrets.ya?ml$
     key_groups:
@@ -12,3 +15,5 @@ creation_rules:
         - *alpha
         - *beta
         - *omega
+        - *gamma
+        - *home-gamma
