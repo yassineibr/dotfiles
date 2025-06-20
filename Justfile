@@ -10,6 +10,9 @@ deploy host="":
 debug host="":
     nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose
 
+offline host="":
+    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose --offline
+
 build host="":
     nixos-rebuild build --flake .#{{host}} --use-remote-sudo --show-trace --verbose
 
@@ -21,8 +24,8 @@ vm host="":
     sudo -E ./result/bin/run-*-vm
     sudo rm -f ./*.qcow2 ./result
 
-update:
-    nix flake update
+update repo="":
+    nix flake update {{repo}}
 
 nvfetcher:
 	cd overlays && nvfetcher
