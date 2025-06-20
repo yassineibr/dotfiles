@@ -8,7 +8,7 @@
   services.netbird = {
     enable = true;
     clients.default = {
-      autoStart = false;
+      autoStart = lib.mkDefault false;
     };
   };
 }
