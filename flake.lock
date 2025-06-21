@@ -1038,11 +1038,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1749738683,
-        "narHash": "sha256-R1hHNEnWmX1yz6bQrdQSz0iPEuIMh+6FffgIzi4hpVI=",
+        "lastModified": 1750343450,
+        "narHash": "sha256-A8HHzNdAMKPHbv9hVupI3jr83mCYRyfE5+/tCjyCLPQ=",
         "owner": "NixNeovim",
         "repo": "NixNeovimPlugins",
-        "rev": "e039c4925e41e2e43861c7c0a37e1923adfe2e68",
+        "rev": "379cf4ce3e8847bbcfc9f327b0e026c586627382",
         "type": "github"
       },
       "original": {
@@ -1132,11 +1132,11 @@
     },
     "nixpkgs_10": {
       "locked": {
-        "lastModified": 1749285348,
-        "narHash": "sha256-frdhQvPbmDYaScPFiCnfdh3B/Vh81Uuoo0w5TkWmmjU=",
+        "lastModified": 1750365781,
+        "narHash": "sha256-XE/lFNhz5lsriMm/yjXkvSZz5DfvKJLUjsS6pP8EC50=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3e3afe5174c561dee0df6f2c2b2236990146329f",
+        "rev": "08f22084e6085d19bcfb4be30d1ca76ecb96fe54",
         "type": "github"
       },
       "original": {
@@ -1283,11 +1283,11 @@
         "systems": "systems_7"
       },
       "locked": {
-        "lastModified": 1749912017,
-        "narHash": "sha256-czkCsWm17IeeJpXEXdQXSxbrVXmJKS6+N+wnKPeU+r8=",
+        "lastModified": 1750498074,
+        "narHash": "sha256-AaPjIEfFePBIwwtcRmq/wbZkEk0uYoYaWI3q47F7wRw=",
         "owner": "yassineibr",
         "repo": "nixvim",
-        "rev": "6a56baf908fea74f849e52cae19c60b6e3c04f73",
+        "rev": "e95417b0262d7c91cc30093fc46d513c374b2c0b",
         "type": "github"
       },
       "original": {
@@ -1307,11 +1307,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1749761870,
-        "narHash": "sha256-y+rCuxTylur4k2MbL8cJwOR3pHIamCxp8xG9Vuhwvgw=",
+        "lastModified": 1750345447,
+        "narHash": "sha256-yOuSSfI4xovXQpSkZUK02CBcY1f0Nvm0RhnUN8xn2rY=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "18d838e88945b554d059db5f1fff1daed4b7bf8f",
+        "rev": "6a1a348ab1f00bd32d2392b5c2fc72489c699af3",
         "type": "github"
       },
       "original": {
@@ -1331,11 +1331,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1749531675,
-        "narHash": "sha256-UB8Mc88rW9frjpJ1Fj2ro7f07Gg8dX3uVXvMXnFR4CE=",
+        "lastModified": 1749730855,
+        "narHash": "sha256-L3x2nSlFkXkM6tQPLJP3oCBMIsRifhIDPMQQdHO5xWo=",
         "owner": "NuschtOS",
         "repo": "search",
-        "rev": "4029d450d0266909ee52775849b7da54e79b328e",
+        "rev": "8dfe5879dd009ff4742b668d9c699bc4b9761742",
         "type": "github"
       },
       "original": {
