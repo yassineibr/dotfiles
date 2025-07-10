@@ -40,8 +40,6 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-
     # AGS
     matugen.url = "github:InioX/matugen?ref=v2.2.0";
     ags.url = "github:Aylur/ags";
@@ -77,7 +75,6 @@
           config.allowUnfree = true;
           overlays = [
             outputs.overlays.unstable-packages
-            inputs.hyprpanel.overlay
           ];
         }
       );
