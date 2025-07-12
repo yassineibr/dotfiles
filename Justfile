@@ -31,6 +31,7 @@ nvfetcher:
 	cd overlays && nvfetcher
 	just fmt
 	git add overlays
+	git diff --staged
 
 upgrade: update deploy
 
