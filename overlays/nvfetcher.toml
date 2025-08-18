@@ -1,4 +1,4 @@
 [netbird]
 src.github = "netbirdio/netbird"
 fetch.github = "netbirdio/netbird"
-passthru = { vendorHash = "sha256-uVVm+iDGP2eZ5GVXWJrWZQ7LpHdZccRIiHPIFs6oAPo=" }
+passthru = { vendorHash = "sha256-zpZZdkEqYYmojd5M74jPOaSdt8uvv80XGLH/CmfjWLg=" }
