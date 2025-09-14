@@ -8,7 +8,7 @@
   wayland.windowManager.hyprland.systemd.variables = [ "--all" ];
 
   imports = [
-    inputs.hyprland.homeManagerModules.default
+    # inputs.hyprland.homeManagerModules.default
     ./hyprlock.nix
     ./cliphist.nix
     # ./vms.nix
@@ -54,6 +54,9 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    # set the Hyprland and XDPH packages to null to use the ones from the NixOS module
+    package = null;
+    portalPackage = null;
     # package = pkgs.unstable.hyprland;
     settings = {
       "ecosystem:no_update_news" = true;
@@ -181,102 +184,105 @@
 
       gestures = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        workspace_swipe = "on";
+        # workspace_swipe = "on";
         workspace_swipe_distance = 200;
         workspace_swipe_cancel_ratio = 0.15;
       };
+
+      gesture = [
+        "3, horizontal, workspace"
+      ];
 
       # "device:epic-mouse-v1" = {
       # sensitivity = -0.5;
       # };
 
       "$mainMod" = "SUPER";
-      bind =
-        [
-          "$mainMod, B, exec, brave"
-          "$mainMod, C, killactive, "
-          "$mainMod SHIFT, Q, exit, "
-          "$mainMod, E, exec, nautilus"
-          ''$mainMod SHIFT, V, exec, hyprctl --batch "dispatch togglefloating active; dispatch pin active" ''
-          "$mainMod, R, exec, pkill rofi || rofi -show drun -show-icons"
-          "$mainMod SHIFT, R, exec, pkill rofi || rofi -show run -show-icons"
-          "$mainMod SHIFT, C, exec, pkill rofi || rofi -show ssh -show-icons"
-          "$mainMod, P, exec, pkill wlogout || wlogout --protocol layer-shell"
-          "$mainMod, T, togglesplit," # dwindle
-          "$mainMod, F, fullscreen, 0"
-          "$mainMod SHIFT, F, fullscreen, 1"
-          # to switch between windows in a floating workspace
-          "ALT,Tab,cyclenext,"
-          "ALT,Tab,bringactivetotop,"
+      bind = [
+        "$mainMod, B, exec, brave"
+        "$mainMod, C, killactive, "
+        "$mainMod SHIFT, Q, exit, "
+        "$mainMod, E, exec, nautilus"
+        ''$mainMod SHIFT, V, exec, hyprctl --batch "dispatch togglefloating active; dispatch pin active" ''
+        "$mainMod, R, exec, pkill rofi || rofi -show drun -show-icons"
+        "$mainMod SHIFT, R, exec, pkill rofi || rofi -show run -show-icons"
+        "$mainMod SHIFT, C, exec, pkill rofi || rofi -show ssh -show-icons"
+        "$mainMod, P, exec, pkill wlogout || wlogout --protocol layer-shell"
+        "$mainMod, T, togglesplit," # dwindle
+        "$mainMod, F, fullscreen, 0"
+        "$mainMod SHIFT, F, fullscreen, 1"
+        # to switch between windows in a floating workspace
+        "ALT,Tab,cyclenext,"
+        "ALT,Tab,bringactivetotop,"
 
-          "$mainMod, H, cyclenext, prev"
-          # "$mainMod, L, cyclenext,"
-          "$mainMod, J, splitratio, -0.1"
-          "$mainMod, K, splitratio, +0.1"
+        "$mainMod, H, cyclenext, prev"
+        # "$mainMod, L, cyclenext,"
+        "$mainMod, J, splitratio, -0.1"
+        "$mainMod, K, splitratio, +0.1"
 
-          # Example special workspace (scratchpad)
-          "$mainMod, S, togglespecialworkspace, magic"
-          "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        # Example special workspace (scratchpad)
+        "$mainMod, S, togglespecialworkspace, magic"
+        "$mainMod SHIFT, S, movetoworkspace, special:magic"
 
-          "$mainMod, M, togglespecialworkspace, music"
-          "$mainMod SHIFT, M, movetoworkspace, special:music"
+        "$mainMod, M, togglespecialworkspace, music"
+        "$mainMod SHIFT, M, movetoworkspace, special:music"
 
-          "$mainMod, F1, togglespecialworkspace, socials"
-          "$mainMod SHIFT, F1, movetoworkspace, special:socials"
+        "$mainMod, F1, togglespecialworkspace, socials"
+        "$mainMod SHIFT, F1, movetoworkspace, special:socials"
 
-          "$mainMod, F2, togglespecialworkspace, work"
-          "$mainMod SHIFT, F2, movetoworkspace, special:work"
+        "$mainMod, F2, togglespecialworkspace, work"
+        "$mainMod SHIFT, F2, movetoworkspace, special:work"
 
-          # Scroll through existing workspaces with mainMod + scroll
-          "$mainMod, mouse_down, workspace, e+1"
-          "$mainMod, mouse_up, workspace, e-1"
-          "$mainMod, TAB, workspace, e+1"
+        # Scroll through existing workspaces with mainMod + scroll
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
+        "$mainMod, TAB, workspace, e+1"
 
-          # "$mainMod, Tab, workspace, previous"
-          "$mainMod SHIFT, space, togglefloating, "
-          # "$mainMod SHIFT, F, fakefullscreen, "
-          # "$mainMod, return, swapnext, "
+        # "$mainMod, Tab, workspace, previous"
+        "$mainMod SHIFT, space, togglefloating, "
+        # "$mainMod SHIFT, F, fakefullscreen, "
+        # "$mainMod, return, swapnext, "
 
-          # screenshot
-          ", Print, exec, grim -g \"$(slurp -w 0)\" - | wl-copy -t image/png && wl-paste > $XDG_SCREENSHOTS_DIR/Screenshot-$(date +%F_%T).png | dunstify \"Screenshot of the region taken\" -t 1000" # screenshot of a region
-          "SHIFT, Print, exec, grim - | wl-copy -t image/png && wl-paste > $XDG_SCREENSHOTS_DIR/Screenshot-$(date +%F_%T).png | dunstify \"Screenshot of whole screen taken\" -t 1000" # screenshot of the whole screen
+        # screenshot
+        ", Print, exec, grim -g \"$(slurp -w 0)\" - | wl-copy -t image/png && wl-paste > $XDG_SCREENSHOTS_DIR/Screenshot-$(date +%F_%T).png | dunstify \"Screenshot of the region taken\" -t 1000" # screenshot of a region
+        "SHIFT, Print, exec, grim - | wl-copy -t image/png && wl-paste > $XDG_SCREENSHOTS_DIR/Screenshot-$(date +%F_%T).png | dunstify \"Screenshot of whole screen taken\" -t 1000" # screenshot of the whole screen
 
-          #gamemode
-          "$mainMod, G, exec, gamemode"
+        #gamemode
+        "$mainMod, G, exec, gamemode"
 
-          # Hyprlock
-          "$mainMod, L, exec, hyprlock"
-          "$mainMod SHIFT, L, exec, systemctl suspend && hyprlock"
-          "$mainMod, minus, workspace, 11"
-          "$mainMod SHIFT, minus, movetoworkspace, 11"
+        # Hyprlock
+        "$mainMod, L, exec, hyprlock"
+        "$mainMod SHIFT, L, exec, systemctl suspend && hyprlock"
+        "$mainMod, minus, workspace, 11"
+        "$mainMod SHIFT, minus, movetoworkspace, 11"
 
-          # Screen sharing
-          "$mainMod,  bracketleft, exec, hyprctl keyword monitor HDMI-A-1,preferred,auto,auto"
-          "$mainMod, bracketright, exec, hyprctl keyword monitor HDMI-A-1,preferred,auto,auto,mirror,eDP-1"
+        # Screen sharing
+        "$mainMod,  bracketleft, exec, hyprctl keyword monitor HDMI-A-1,preferred,auto,auto"
+        "$mainMod, bracketright, exec, hyprctl keyword monitor HDMI-A-1,preferred,auto,auto,mirror,eDP-1"
 
-          # Monitor
-          "$mainMod, D, swapactiveworkspaces, 1 0"
-        ]
-        ++ (
-          # workspaces
-          # binds $mainMod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (
-            builtins.genList (
-              x:
-              let
-                ws =
-                  let
-                    c = (x + 1) / 10;
-                  in
-                  builtins.toString (x + 1 - (c * 10));
-              in
-              [
-                "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            ) 10
-          )
-        );
+        # Monitor
+        "$mainMod, D, swapactiveworkspaces, 1 0"
+      ]
+      ++ (
+        # workspaces
+        # binds $mainMod + [shift +] {1..10} to [move to] workspace {1..10}
+        builtins.concatLists (
+          builtins.genList (
+            x:
+            let
+              ws =
+                let
+                  c = (x + 1) / 10;
+                in
+                builtins.toString (x + 1 - (c * 10));
+            in
+            [
+              "$mainMod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mainMod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          ) 10
+        )
+      );
 
       bindm = [
         # Move/resize windows with mainMod + LMB/RMB and dragging
