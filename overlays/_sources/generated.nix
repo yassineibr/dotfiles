@@ -8,14 +8,14 @@
 {
   netbird = {
     pname = "netbird";
-    version = "v0.59.4";
+    version = "v0.59.6";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.59.4";
+      rev = "v0.59.6";
       fetchSubmodules = false;
-      sha256 = "sha256-+81T+BujWPYPKuWgAD9es5o5TjJw/8Mph6Ry+XJGHWg=";
+      sha256 = "sha256-WCzC6T2FqbdSjedvPK223zLE3rYuKUCec8BEkNK/sPg=";
     };
-    vendorHash = "sha256-hg9vzosB6yVS0e0McekIuchWaByYS02kbbtilKjCo7s=";
+    vendorHash = "sha256-JMynPCH5Zvzz8nYI7DPu9TzU+rWJemPwyDdlPkFiqds=";
   };
 }
