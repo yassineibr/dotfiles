@@ -322,7 +322,7 @@
         "pin, title:^(Picture in picture)$"
         "move 100%-w-5 100%-w-5, title:(Picture in picture)"
 
-        "workspace:special:meet:slient, title:^(meet.google.com is sharing your screen.)$"
+        # "workspace:special:meet:slient, title:^(meet.google.com is sharing your screen.)$"
         # "float, title:^(Firefox)$"
         # "size 800 450, title:(Firefox)"
         # "pin, title:^(Firefox)$"
