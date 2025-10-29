@@ -7,9 +7,12 @@
 }:
 {
 
+  # # NOTE: disabled for now while testing new nixos-rebuild
+  # system.rebuild.enableNg = lib.mkForce false;
+
   sops.secrets.nix-access-tokens-github = { };
 
-  # nix Flakes
+  # nix Flake
   nix.extraOptions = ''
     experimental-features = nix-command flakes
     !include ${config.sops.secrets.nix-access-tokens-github.path}
