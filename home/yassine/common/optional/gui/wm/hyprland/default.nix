@@ -12,7 +12,7 @@
     ./hyprlock.nix
     ./cliphist.nix
     # ./vms.nix
-    # ../../wallpaper/hyprpaper.nix
+    ../../wallpaper/hyprpaper.nix
     ./tty-login.nix
     ../../launchers/rofi.nix
     ../../others/dunst.nix
@@ -317,10 +317,10 @@
         "special:music, on-created-empty:spotify, gapsout:50"
       ];
       windowrule = [
-        "float, title:^(Picture in picture)$"
-        "size 624 351, title:(Picture in picture)"
-        "pin, title:^(Picture in picture)$"
-        "move 100%-w-5 100%-w-5, title:(Picture in picture)"
+        # "float, title:^(Picture in picture)$"
+        # "size 624 351, title:(Picture in picture)"
+        # "pin, title:^(Picture in picture)$"
+        # "move 100%-w-5 100%-w-5, title:(Picture in picture)"
 
         # "workspace:special:meet:slient, title:^(meet.google.com is sharing your screen.)$"
         # "float, title:^(Firefox)$"

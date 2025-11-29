@@ -2,8 +2,7 @@
   config,
   pkgs,
   ...
-}:
-{
+}: {
   networking.hostName = "beta"; # Define your hostname.
 
   imports = [
@@ -44,11 +43,6 @@
 
   networking.firewall.enable = false;
   services.fwupd.enable = true;
-
-  programs.goldwarden = {
-    enable = true;
-    useSshAgent = true;
-  };
 
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-qt;
 

@@ -7,6 +7,8 @@
   ...
 }:
 {
+  hardware.opentabletdriver.enable = true;
+
   networking.hostName = "alpha";
 
   imports = [
@@ -54,6 +56,51 @@
   virtualisation.docker.daemon.settings = {
     data-root = "/home/docker/docker";
   };
+
+  # services.netbird.clients.default.autoStart = true;
+
+  programs.gnupg.agent.pinentryPackage = pkgs.pinentry-qt;
+
+  boot = {
+
+    plymouth = {
+      enable = true;
+      theme = "rings";
+      themePackages = with pkgs; [
+        # By default we would install all themes
+        (adi1090x-plymouth-themes.override {
+          selected_themes = [ "rings" ];
+        })
+      ];
+    };
+
+    # Enable "Silent Boot"
+    consoleLogLevel = 0;
+    initrd.verbose = false;
+    kernelParams = [
+      "quiet"
+      "splash"
+      "boot.shell_on_fail"
+      "loglevel=3"
+      "rd.systemd.show_status=false"
+      "rd.udev.log_level=3"
+      "udev.log_priority=3"
+    ];
+    # Hide the OS choice for bootloaders.
+    # It's still possible to open the bootloader list by pressing any key
+    # It will just not appear on screen unless a key is pressed
+    loader.timeout = 0;
+
+  };
+
+  # security.pam.services.kwallet = {
+  # 	name = "kwallet";
+  # 	enableKwallet = true;
+  # };
+
+  # virtualisation.vmware.host.enable = true;
+
+  programs.steam.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

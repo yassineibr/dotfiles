@@ -13,6 +13,10 @@
 
   programs.carapace = {
     enable = true;
+
+    enableNushellIntegration = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
   };
 
   programs.nushell = {
@@ -20,5 +24,13 @@
     plugins = with pkgs.nushellPlugins; [
       gstat
     ];
+
+    settings = {
+      show_banner = false;
+      # completions.external = {
+      #   enable = true;
+      #   max_results = 200;
+      # };
+    };
   };
 }

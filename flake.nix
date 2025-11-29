@@ -3,11 +3,11 @@
 
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/release-25.11";
       # url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -47,8 +47,8 @@
 
     # Secure Boot
     lanzaboote = {
-      url = "github:nix-community/lanzaboote/v0.4.2";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:nix-community/lanzaboote/v0.4.3";
+      # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     systems.url = "github:nix-systems/default-linux";
@@ -87,7 +87,9 @@
     {
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
 
-      formatter = forEachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
+      formatter = forEachSystem (
+        pkgs: treefmtEval.${pkgs.stdenv.hostPlatform.system}.config.build.wrapper
+      );
 
       homeConfigurations = import ./home/default.nix { inherit lib inputs pkgsFor; };
 

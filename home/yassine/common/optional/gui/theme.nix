@@ -7,9 +7,9 @@
     size = 24;
   };
 
-  home.sessionVariables = {
-    GTK_THEME = config.gtk.theme.name;
-  };
+  # home.sessionVariables = {
+  #   GTK_THEME = config.gtk.theme.name;
+  # };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
@@ -20,13 +20,13 @@
   gtk = {
     enable = true;
 
-    theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
-    };
-
-    iconTheme.package = pkgs.adwaita-icon-theme;
-    iconTheme.name = "Adwaita";
+    # theme = {
+    #   name = "adw-gtk3-dark";
+    #   package = pkgs.adw-gtk3;
+    # };
+    #
+    # iconTheme.package = pkgs.adwaita-icon-theme;
+    # iconTheme.name = "Adwaita";
 
     gtk3 = {
       extraConfig = {

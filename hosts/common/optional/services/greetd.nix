@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
   session = "ssh-agent Hyprland";
 in
 {
