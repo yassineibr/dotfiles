@@ -57,7 +57,7 @@
     data-root = "/home/docker/docker";
   };
 
-  # services.netbird.clients.default.autoStart = true;
+  services.netbird.clients.default.autoStart = true;
 
   programs.gnupg.agent.pinentryPackage = pkgs.pinentry-qt;
 
@@ -101,6 +101,8 @@
   # virtualisation.vmware.host.enable = true;
 
   programs.steam.enable = true;
+
+	virtualisation.waydroid.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
