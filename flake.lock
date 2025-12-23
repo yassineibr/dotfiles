@@ -1302,11 +1302,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1766243863,
-        "narHash": "sha256-rpKNi1+JlQtWlCi1u9FvqKpKkHDCE4MNsM8APpwFZjo=",
+        "lastModified": 1766484195,
+        "narHash": "sha256-wXmd0ZlKbpPmsqi93Eg3N1vdiB+G4kQZStuXjybeRrk=",
         "owner": "yassineibr",
         "repo": "nixvim",
-        "rev": "6ef2b8535b716d2d81317ed8f499c2c98536bbdb",
+        "rev": "75a4d37294a65835ff28da8894fce9fffb2ba4fd",
         "type": "github"
       },
       "original": {
