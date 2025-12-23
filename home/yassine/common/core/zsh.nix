@@ -28,8 +28,8 @@
     initContent = ''
       			bindkey '^f' autosuggest-accept
       		'';
-    dotDir = ".config/zsh";
-    history.path = "$HOME/.config/zsh/.zsh_history";
+    dotDir = "${config.xdg.configHome}/zsh";
+    history.path = "${config.xdg.configHome}/zsh/.zsh_history";
   };
 
   programs.fzf = {
