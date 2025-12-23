@@ -8,7 +8,7 @@
 
   services.hyprpaper = {
     enable = true;
-    package = inputs.hyprpaper.packages.${pkgs.system}.default;
+    package = inputs.hyprpaper.packages.${pkgs.stdenv.hostPlatform.system}.default;
     settings = {
       splash = true;
 

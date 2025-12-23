@@ -7,7 +7,6 @@
 {
   # MSI Laptop
   alpha = lib.nixosSystem {
-    system = "x86_64-linux";
     specialArgs = {
       inherit inputs outputs;
     };
@@ -16,7 +15,6 @@
 
   # HP Laptop
   beta = lib.nixosSystem {
-    system = "x86_64-linux";
     specialArgs = {
       inherit inputs outputs;
     };
@@ -25,7 +23,6 @@
 
   # Thinkpad M710q I7
   gamma = lib.nixosSystem {
-    system = "x86_64-linux";
     specialArgs = {
       inherit inputs outputs;
     };
@@ -34,7 +31,6 @@
 
   # Desktop
   omega = lib.nixosSystem {
-    system = "x86_64-linux";
     specialArgs = {
       inherit inputs outputs;
     };

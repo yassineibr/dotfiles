@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
   tuigreet = "${pkgs.tuigreet}/bin/tuigreet";
-  session = "ssh-agent Hyprland";
+  session = "ssh-agent start-hyprland";
 in
 {
   services.greetd = {

@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   networking.hostName = "beta"; # Define your hostname.
 
   imports = [

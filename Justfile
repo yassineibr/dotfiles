@@ -2,25 +2,25 @@ default:
   @just --list
 
 boot host="":
-    nixos-rebuild boot --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+    nixos-rebuild boot --flake .#{{host}} --sudo --show-trace --verbose
 
 deploy host="":
-    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo
+    nixos-rebuild switch --flake .#{{host}} --sudo
 
 debug host="":
-    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+    nixos-rebuild switch --flake .#{{host}} --sudo --show-trace --verbose
 
 offline host="":
-    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose --offline
+    nixos-rebuild switch --flake .#{{host}} --sudo --show-trace --verbose --offline
 
 build host="":
-    nixos-rebuild build --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+    nixos-rebuild build --flake .#{{host}} --sudo --show-trace --verbose
 
 test host="":
-    nixos-rebuild test --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+    nixos-rebuild test --flake .#{{host}} --sudo --show-trace --verbose
 
 vm host="":
-    sudo nixos-rebuild build-vm --flake .#{{host}} --use-remote-sudo --show-trace --verbose
+    sudo nixos-rebuild build-vm --flake .#{{host}} --sudo --show-trace --verbose
     sudo -E ./result/bin/run-*-vm
     sudo rm -f ./*.qcow2 ./result
 
@@ -47,13 +47,13 @@ fmt:
     nix fmt
 
 remote-debug host="":
-    nixos-rebuild switch --flake .#{{host}} --use-remote-sudo --show-trace --verbose --target-host {{host}}
+    nixos-rebuild switch --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
 
 remote-build host="":
-    nixos-rebuild build --flake .#{{host}} --use-remote-sudo --show-trace --verbose --target-host {{host}}
+    nixos-rebuild build --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
 
 remote-test host="":
-    nixos-rebuild test --flake .#{{host}} --use-remote-sudo --show-trace --verbose --target-host {{host}}
+    nixos-rebuild test --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
 
 
 sops-update-keys:
