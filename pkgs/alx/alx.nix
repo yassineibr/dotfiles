@@ -29,7 +29,7 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = kernel.moduleBuildDependencies;
 
-  makeFlags = kernel.makeFlags ++ [
+  makeFlags = kernel.commonMakeFlags ++ [
     "-C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
     "M=$(PWD)"
     "modules"
