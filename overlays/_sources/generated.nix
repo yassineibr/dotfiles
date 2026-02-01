@@ -8,13 +8,13 @@
 {
   netbird = {
     pname = "netbird";
-    version = "v0.64.2";
+    version = "v0.64.3";
     src = fetchFromGitHub {
       owner = "netbirdio";
       repo = "netbird";
-      rev = "v0.64.2";
+      rev = "v0.64.3";
       fetchSubmodules = false;
-      sha256 = "sha256-MwR+4StGDYp/P25JfH82i78lpSAj1yyIjaOVq8g3T0U=";
+      sha256 = "sha256-mNzXdrpM+oeZ7X4NRNYsoMcSfvRU6SeExstUF3fZ3bE=";
     };
     vendorHash = "sha256-n0s2K+qbMiNfbkPbqvvXpvFvL5PkCkuJJ2CH3bEUCOk=";
   };
