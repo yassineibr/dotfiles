@@ -29,6 +29,14 @@
     modules = [ ./gamma ];
   };
 
+
+  theta = lib.nixosSystem {
+    specialArgs = {
+      inherit inputs outputs;
+    };
+    modules = [ ./theta ];
+  };
+
   # Desktop
   omega = lib.nixosSystem {
     specialArgs = {

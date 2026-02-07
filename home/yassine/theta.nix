@@ -1,0 +1,11 @@
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
+{
+  imports = [ ./common/core ];
+
+  home.stateVersion = "25.11";
+}
