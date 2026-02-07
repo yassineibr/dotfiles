@@ -32,6 +32,9 @@ jobs:
           - host: omega
             platform: x86_64-linux
             large: true
+          - host: theta
+            platform: x86_64-linux
+            large: true
 
     steps:
       - uses: actions/checkout@v4
