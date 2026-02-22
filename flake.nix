@@ -65,6 +65,14 @@
     };
 
     systems.url = "github:nix-systems/default-linux";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    deploy-rs.url = "github:serokell/deploy-rs";
+
   };
 
   outputs =
@@ -73,6 +81,7 @@
       nixpkgs,
       home-manager,
       treefmt-nix,
+      deploy-rs,
       ...
     }:
     let
@@ -106,9 +115,13 @@
 
       homeConfigurations = import ./home/default.nix { inherit lib inputs pkgsFor; };
 
-      hydraJobs = import ./hydra.nix { inherit inputs outputs; };
+      # hydraJobs = import ./hydra.nix { inherit inputs outputs; };
 
       nixosConfigurations = import ./hosts/default.nix { inherit lib inputs outputs; };
+
+      deploy = import ./deploy-rs/default.nix { inherit lib inputs outputs; };
+
+      checks = builtins.mapAttrs (system: deployLib: deployLib.deployChecks self.deploy) deploy-rs.lib;
 
       overlays = import ./overlays { inherit inputs; };
 

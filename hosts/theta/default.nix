@@ -16,9 +16,12 @@
 
     ./packages.nix
 
-    ../common/optional/network/tailscale.nix
+    ../common/optional/network/netbird/client.nix
+
     ../common/optional/services/sshd.nix
     ../common/optional/hardware/prometheus/exporters
+
+    ../common/optional/virtualisation/docker.nix
 
     ../common/optional/cache
 
@@ -27,7 +30,7 @@
     # ./wg-quick.nix
   ];
 
-  services.tailscale.useRoutingFeatures = "both";
+  services.netbird.clients.default.autoStart = true;
 
   services.openssh.settings = {
     PasswordAuthentication = true;

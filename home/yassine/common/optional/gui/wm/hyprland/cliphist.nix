@@ -24,7 +24,7 @@
         "wl-paste --type image --watch cliphist store #Stores only image data"
       ];
       bind = [
-        ''SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy''
+        "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
       ];
     };
   };

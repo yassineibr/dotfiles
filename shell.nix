@@ -47,6 +47,8 @@
       nvfetcher
       lazygit
       nh
+
+      deploy-rs
     ];
   };
 }
