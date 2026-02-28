@@ -16,6 +16,8 @@
     ./packages.nix
 
     ../common/optional/network/tailscale.nix
+    ../common/optional/network/netbird/client.nix
+
     ../common/optional/services/sshd.nix
     ../common/optional/hardware/prometheus.nix
 

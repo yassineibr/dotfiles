@@ -31,7 +31,7 @@
     # ./wg-quick.nix
   ];
 
-  services.netbird.clients.default.autoStart = true;
+  services.netbird.clients.default.port = 51881;
 
   services.openssh.settings = {
     PasswordAuthentication = true;

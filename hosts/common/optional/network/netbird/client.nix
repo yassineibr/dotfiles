@@ -10,7 +10,7 @@
     clients.default = {
       autoStart = lib.mkDefault true;
       interface = "nb0";
-      port = 51880;
+      port = lib.mkForce 51880;
     };
   };
 }
