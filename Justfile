@@ -1,10 +1,15 @@
+alias d := deploy
+
 default:
   @just --list
+
+repl host="":
+    nixos-rebuild repl --flake .#{{host}}
 
 boot host="":
     nixos-rebuild boot --flake .#{{host}} --sudo --show-trace --verbose
 
-deploy host="":
+switch host="":
     nixos-rebuild switch --flake .#{{host}} --sudo
 
 debug host="":
@@ -14,7 +19,7 @@ offline host="":
     nixos-rebuild switch --flake .#{{host}} --sudo --show-trace --verbose --offline
 
 build host="":
-    nixos-rebuild build --flake .#{{host}} --sudo --show-trace --verbose
+    nixos-rebuild build --flake .#{{host}}
 
 test host="":
     nixos-rebuild test --flake .#{{host}} --sudo --show-trace --verbose
@@ -47,7 +52,7 @@ fmt:
     nix fmt
 
 remote-debug host="":
-    nixos-rebuild switch --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
+    nixos-rebuild switch --flake .#{{host}} --ask-sudo-password --show-trace --verbose --target-host {{host}}
 
 remote-build host="":
     nixos-rebuild build --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
@@ -55,6 +60,11 @@ remote-build host="":
 remote-test host="":
     nixos-rebuild test --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
 
+check host="":
+    nix flake check .#nixosConfigurations.{{host}}.config.system.build.toplevel
 
 sops-update-keys:
   sops updatekeys ./hosts/common/secrets.yml
+
+deploy host="":
+  deploy -sd .#{{host}}

@@ -12,6 +12,8 @@
     ./packages.nix
 
     ../common/core
+    ../common/core/home-manager.nix
+
     ../common/optional/boot/grub.nix
     ../common/optional/boot/dualboot.nix
     ../common/optional/nixos-rebuild.nix

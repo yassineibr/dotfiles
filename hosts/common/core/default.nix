@@ -6,7 +6,7 @@
     ./sops.nix
     ./zsh.nix
     ./nix-settings.nix
-    ./home-manager.nix
+    # ./home-manager.nix # Try including home-manager in the default.nix of each computer
     ./overlays.nix
   ];
 }

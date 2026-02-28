@@ -24,5 +24,7 @@
     waypipe
 
     heroic
+
+    pkgs.unstable.bitwarden-desktop
   ];
 }

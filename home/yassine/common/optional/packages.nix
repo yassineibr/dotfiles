@@ -14,7 +14,7 @@
 
     just
     keepassxc
-    pkgs.unstable.bitwarden-desktop
+    # pkgs.unstable.bitwarden-desktop
     bitwarden-cli
     imv
     lf

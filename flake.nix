@@ -17,12 +17,17 @@
   inputs = {
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
-      # url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    home-manager-unstable = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     sops-nix = {
@@ -79,7 +84,9 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-unstable,
       home-manager,
+      home-manager-unstable,
       treefmt-nix,
       deploy-rs,
       ...
@@ -88,6 +95,7 @@
       inherit (self) outputs;
 
       lib = nixpkgs.lib // home-manager.lib;
+      lib-unstable = nixpkgs-unstable.lib // home-manager-unstable.lib;
       systems = import inputs.systems;
 
       pkgsFor = lib.genAttrs systems (
@@ -117,7 +125,14 @@
 
       # hydraJobs = import ./hydra.nix { inherit inputs outputs; };
 
-      nixosConfigurations = import ./hosts/default.nix { inherit lib inputs outputs; };
+      nixosConfigurations = import ./hosts/default.nix {
+        inherit
+          lib
+          lib-unstable
+          inputs
+          outputs
+          ;
+      };
 
       deploy = import ./deploy-rs/default.nix { inherit lib inputs outputs; };
 

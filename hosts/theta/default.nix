@@ -13,6 +13,7 @@
     ../common/optional/boot/systemd-boot.nix
 
     ../common/core
+    ../common/core/home-manager.nix
 
     ./packages.nix
 

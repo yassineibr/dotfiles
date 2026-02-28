@@ -1,5 +1,6 @@
 {
   lib,
+  lib-unstable,
   inputs,
   outputs,
   ...
@@ -29,7 +30,6 @@
     modules = [ ./gamma ];
   };
 
-
   theta = lib.nixosSystem {
     specialArgs = {
       inherit inputs outputs;
@@ -51,5 +51,13 @@
       inherit inputs outputs;
     };
     modules = [ ./epsilon ];
+  };
+
+  upsilon = lib-unstable.nixosSystem {
+    # upsilon = lib.nixosSystem {
+    specialArgs = {
+      inherit inputs outputs;
+    };
+    modules = [ ./upsilon ];
   };
 }

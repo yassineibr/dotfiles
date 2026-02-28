@@ -6,9 +6,11 @@ keys:
     - &omega age1llsz9y0zl02d42maknvrjnf66tqz2cgq83m7hlgqpquc8vvx0phs0qmh8u
     - &gamma age1q0azy7tauvu6u2q5lyndtdhlt537etz08ahyygt7p0trdsqws3jqpnpasl
     - &theta age1zq7cczunte3dgjq54thqy7533d3y5ml04et9vr3jdfsxqctz2c9spce4ml
+    - &upsilon age1l0qe4csr0rcxk2t0axywjzn0gvk82u7s2vzuur53jv80tpzg4s5smh5jdn
   - &home-manager:
     - &home-gamma age1qvddpctmj2k0hmeu428a4l952rv8pj79hwntf5qcemmr9cjf7qwqk996gg
     - &home-theta age1qu8pv5vtfujwf9cy48js8g9l69rlp9rsujr4wdyylt9qqqqlacksgu68hr
+    - &home-upsilon age1uq4vutgawyrxrthjas4pzps4np9c5ky6y84c46zxe2ef0g9zje2qc2hutu
 creation_rules:
   - path_regex: secrets.ya?ml$
     key_groups:
@@ -19,5 +21,7 @@ creation_rules:
         - *omega
         - *gamma
         - *theta
+        - *upsilon
         - *home-gamma
         - *home-theta
+        - *home-upsilon

@@ -11,6 +11,8 @@
     ./packages.nix
 
     ../common/core
+    ../common/core/home-manager.nix
+
     ../common/optional/boot/systemd-boot.nix
     ../common/optional/nixos-rebuild.nix
 
