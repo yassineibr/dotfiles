@@ -5,20 +5,31 @@
   ...
 }:
 let
-  mkDeploy = host: {
-    hostname = host;
-    fastConnection = true;
-    interactiveSudo = true;
-    profiles.system = with inputs; {
-      user = "root";
-      path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos self.nixosConfigurations.${host};
+  mkDeploy =
+    {
+      host,
+      arch ? "x86_64-linux",
+      sshUser ? "yassine",
+    }:
+    {
+      hostname = host;
+      fastConnection = true;
+      interactiveSudo = true;
+      profiles.system = with inputs; {
+        user = "root";
+        sshUser = sshUser;
+        path = inputs.deploy-rs.lib.${arch}.activate.nixos self.nixosConfigurations.${host};
+      };
     };
-  };
 in
 {
   nodes = {
-    theta = mkDeploy "theta";
-    gamma = mkDeploy "gamma";
-    upsilon = mkDeploy "upsilon";
+    theta = mkDeploy { host = "theta"; };
+    gamma = mkDeploy { host = "gamma"; };
+    upsilon = mkDeploy { host = "upsilon"; };
+    epsilon = mkDeploy {
+      host = "epsilon";
+      arch = "aarch64-linux";
+    };
   };
 }
