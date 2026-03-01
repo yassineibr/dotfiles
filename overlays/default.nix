@@ -30,7 +30,7 @@ in
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: rec {
-    sources = generated {
+    _sources = generated {
       inherit (final)
         fetchurl
         fetchgit
@@ -45,9 +45,9 @@ in
     };
 
     netbird = _prev.netbird.overrideAttrs (oldAttrs: rec {
-      inherit (sources.netbird) src vendorHash;
+      inherit (_sources.netbird) src vendorHash;
 
-      version = final.lib.strings.removePrefix "v" sources.netbird.version;
+      version = final.lib.strings.removePrefix "v" _sources.netbird.version;
 
       ldflags = [
         "-s"
