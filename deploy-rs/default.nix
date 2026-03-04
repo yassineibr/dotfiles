@@ -5,6 +5,30 @@
   ...
 }:
 let
+  systems = import inputs.systems;
+  # nixpkgs with deploy-rs overlay but force the nixpkgs package
+  deployPkgsFor = lib.genAttrs systems (
+    system:
+    let
+      pkgs = import inputs.nixpkgs {
+        inherit system;
+      };
+    in
+    import inputs.nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      overlays = [
+        inputs.deploy-rs.overlays.default
+        (self: super: {
+          deploy-rs = {
+            inherit (pkgs) deploy-rs;
+            lib = super.deploy-rs.lib;
+          };
+        })
+      ];
+    }
+  );
+
   mkDeploy =
     {
       host,
@@ -14,11 +38,11 @@ let
     {
       hostname = host;
       fastConnection = true;
-      interactiveSudo = true;
+      # interactiveSudo = true;
       profiles.system = with inputs; {
         user = "root";
         sshUser = sshUser;
-        path = inputs.deploy-rs.lib.${arch}.activate.nixos self.nixosConfigurations.${host};
+        path = deployPkgsFor.${arch}.deploy-rs.lib.activate.nixos self.nixosConfigurations.${host};
       };
     };
 in
