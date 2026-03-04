@@ -25,6 +25,7 @@
         "172.16.0.0/12"
         "100.64.0.0/10" # Tailscale/CGNAT
       ];
+      tcp.serversTransports.pp-v2.proxyProtocol.version = 2;
       # };
     };
 
