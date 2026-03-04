@@ -24,6 +24,9 @@
   #       '';
   #     };
   #   };
+	security.pam.rssh.enable = true;
+	security.pam.services.sudo.rssh = true;
+
   # Keep SSH_AUTH_SOCK when sudo'ing
   security.sudo.extraConfig = ''
     Defaults env_keep+=SSH_AUTH_SOCK
