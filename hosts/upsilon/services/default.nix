@@ -2,8 +2,9 @@ _: {
   imports = [
     ./uptime-kuma.nix
     ./traefik.nix
-    ./headscale.nix
     ./fail2ban.nix
+
+    # ./headscale.nix
 
     # ./blocky.nix
 

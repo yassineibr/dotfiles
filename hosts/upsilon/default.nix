@@ -21,7 +21,7 @@
     ../common/core
     ../common/core/home-manager-unstable.nix
 
-    ../common/optional/network/tailscale.nix
+    # ../common/optional/network/tailscale.nix
     ../common/optional/network/netbird/client.nix
 
     ../common/optional/services/sshd.nix
