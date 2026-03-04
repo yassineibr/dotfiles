@@ -79,6 +79,7 @@
         "XDG_SESSION_TYPE,wayland"
         "WLR_NO_HARDWARE_CURSORS,1"
         "XCURSOR_SIZE,24"
+        "SSH_AUTH_SOCK,/home/yassine/.bitwarden-ssh-agent.sock"
         # "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card1"
       ];
       monitor = [
