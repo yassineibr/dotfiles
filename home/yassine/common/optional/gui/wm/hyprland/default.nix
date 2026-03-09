@@ -151,6 +151,8 @@
         # vfr = true;
         # vrr = 1;
         initial_workspace_tracking = 0;
+
+        on_focus_under_fullscreen = 1;
       };
       animations = {
         enabled = "yes";
@@ -209,7 +211,7 @@
         "$mainMod SHIFT, R, exec, pkill rofi || rofi -show run -show-icons"
         "$mainMod SHIFT, C, exec, pkill rofi || rofi -show ssh -show-icons"
         "$mainMod, P, exec, pkill wlogout || wlogout --protocol layer-shell"
-        "$mainMod, T, togglesplit," # dwindle
+        "$mainMod, T, layoutmsg, togglesplit" # dwindle
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
         # to switch between windows in a floating workspace
@@ -218,8 +220,8 @@
 
         "$mainMod, H, cyclenext, prev"
         # "$mainMod, L, cyclenext,"
-        "$mainMod, J, splitratio, -0.1"
-        "$mainMod, K, splitratio, +0.1"
+        # "$mainMod, J, splitratio, -0.1"
+        # "$mainMod, K, splitratio, +0.1"
 
         # Example special workspace (scratchpad)
         "$mainMod, S, togglespecialworkspace, magic"
