@@ -47,7 +47,7 @@
               text = ''
                 								let location = http get https://ipinfo.io/json | select loc | values | first | split row ,
                 								let next_adhan_req = http get https://api.aladhan.com/v1/nextPrayer/(date now | format date "%d-%m-%Y")?latitude=($location.0)&longitude=($location.1)
-                								let next_adhan = next_adhan_req | select data.timings | values | first
+                								let next_adhan = $next_adhan_req | select data.timings | values | first
 
                 								let next_adhan_rel_tooltip  = ($next_adhan | values | first | date from-human) - (date now) | to text | split words | first
                 								let next_adhan_name_tooltip = $next_adhan | columns | first
