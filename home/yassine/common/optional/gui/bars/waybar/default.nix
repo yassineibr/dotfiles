@@ -57,9 +57,10 @@
             };
           in
           {
-            interval = 600;
+            interval = 60;
             return-type = "json";
             format = "🕌 {text}";
+            format-alt = "🕌";
             exec = "${lib.getExe pkgs.nushell} ${nextAdhanScript}";
           };
 
