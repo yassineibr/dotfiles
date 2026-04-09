@@ -32,6 +32,9 @@ vm host="":
 update repo="":
     nix flake update {{repo}}
 
+update-netbird:
+    nix-update netbird --flake
+
 nvfetcher:
 	cd overlays && nvfetcher
 	just fmt

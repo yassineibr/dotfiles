@@ -39,6 +39,7 @@ let
       hostname = host;
       fastConnection = true;
       # interactiveSudo = true;
+      confirmTimeout = 60;
       profiles.system = with inputs; {
         user = "root";
         sshUser = sshUser;

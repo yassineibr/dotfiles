@@ -45,6 +45,7 @@
       sops
 
       nvfetcher
+      nix-update
       lazygit
       nh
 
