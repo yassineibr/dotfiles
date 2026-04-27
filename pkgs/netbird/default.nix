@@ -11,7 +11,7 @@ in
 _pkgs.netbird.overrideAttrs (
   oldAttrs:
   let
-    version = "0.69.0";
+    version = "0.70.0";
   in
   {
     # pname = "netbird";
@@ -21,10 +21,10 @@ _pkgs.netbird.overrideAttrs (
       owner = "netbirdio";
       repo = "netbird";
       rev = "v${version}";
-      hash = "sha256-qNWzyL0J7mYQcWYQOIjmlh+KH2WBb6LkYhTNiR6tDpw=";
+      hash = "sha256-M0rOcIjtp/FicrdMRyMVRjJaAHAU6frgNqYqadd7jlg=";
     };
 
-    vendorHash = "sha256-od8m149sJyfdUC0bJ1riHbgXlcX5Yc9K28LCcfWh6DE=";
+    vendorHash = "sha256-NK2+FpI4SJtxpFkRRMUmhPDg+adIvJWqYWyumP5ViN4=";
 
     ldflags = [
       "-s"
