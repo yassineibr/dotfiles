@@ -26,7 +26,7 @@
     tealdeer
     obs-studio
     wireshark
-    zellij
+    unstable.zellij
     tmux
     moonlight-qt
 

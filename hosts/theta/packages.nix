@@ -8,7 +8,7 @@
   environment.systemPackages = with pkgs; [
     vim
     tmux
-    zellij
+    unstable.zellij
     htop-vim
     gdu
     speedtest-cli
