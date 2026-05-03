@@ -66,7 +66,7 @@
       exec = [ ];
       exec-once = [
         "[workspace 2 silent] brave"
-        "[workspace 9 silent] keepassxc"
+        # "[workspace 9 silent] keepassxc"
         "[workspace 9 silent] bitwarden"
         "hyprctl setcursor ${config.home.pointerCursor.name} ${builtins.toString config.home.pointerCursor.size}"
         "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1 &"
