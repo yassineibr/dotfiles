@@ -13,6 +13,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@v16
+
+      - uses: workflow/nix-shell-action@v3
+        name: Update Netbird
+        with:
+          flakes-from-devshell: true
+          script: |
+            # Update Netbird to the latest Version
+            just update-netbird
+
       - name: Update flake.lock
         uses: DeterminateSystems/update-flake-lock@v24
         with:
