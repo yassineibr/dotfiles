@@ -18,6 +18,7 @@ jobs:
         name: Update Netbird
         with:
           flakes-from-devshell: true
+          custom-devshell: ci
           script: |
             # Update Netbird to the latest Version
             just update-netbird
