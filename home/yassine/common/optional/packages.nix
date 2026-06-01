@@ -3,7 +3,7 @@
   home.packages = with pkgs; [
     attic-client
 
-    signal-desktop-bin
+    signal-desktop
     discord
 
     evince
