@@ -22,6 +22,9 @@
     unstable = import inputs.nixpkgs-unstable {
       system = final.stdenv.hostPlatform.system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "electron-39.8.10"
+      ];
     };
 
     netbird = outputs.packages.${_prev.stdenv.hostPlatform.system}.netbird;

@@ -58,6 +58,12 @@
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
     };
 
+    # Noctalia
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # AGS
     matugen.url = "github:InioX/matugen?ref=v2.2.0";
     ags.url = "github:Aylur/ags";

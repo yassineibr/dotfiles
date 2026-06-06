@@ -9,6 +9,10 @@ in
     ./xdg.nix
     inputs.hyprland.nixosModules.default
   ];
+
+  # Noctalia Services
+  services.gnome.evolution-data-server.enable = true;
+
   # Fix wayland for electron based apps
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
   hardware.brillo.enable = true;

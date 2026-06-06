@@ -60,6 +60,9 @@ remote-debug host="":
 remote-build host="":
     nixos-rebuild build --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
 
+remote-boot host="":
+    nixos-rebuild boot --flake .#{{host}} --ask-sudo-password --show-trace --verbose --target-host {{host}}
+
 remote-test host="":
     nixos-rebuild test --flake .#{{host}} --sudo --show-trace --verbose --target-host {{host}}
 
@@ -69,5 +72,5 @@ check host="":
 sops-update-keys:
   sops updatekeys ./hosts/common/secrets.yml
 
-deploy host="":
-  deploy -sd .#{{host}}
+deploy host="" extra_args="":
+  deploy -sd .#{{host}} {{extra_args}}
