@@ -5,7 +5,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec-once = [ "noctalia-shell" ];
+      exec-once = [ "noctalia-shell || noctalia" ];
 
       # bind = [
       #   # waybar

@@ -32,9 +32,11 @@ in
     publicShare = "${config.home.homeDirectory}/Public";
     templates = "${config.home.homeDirectory}/Templates";
     extraConfig = {
-      XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/Screenshots";
+      SCREENSHOTS = "${config.xdg.userDirs.pictures}/Screenshots";
     };
   };
+
+  xdg.userDirs.setSessionVariables = true;
 
   home.sessionVariables = {
     _JAVA_OPTIONS = concatStringsSep " " [

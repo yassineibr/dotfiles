@@ -1,4 +1,5 @@
 {
+  wallpaper.enabled = false;
   # configure noctalia here
   bar = {
     density = "default";
