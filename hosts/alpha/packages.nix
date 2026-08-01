@@ -25,7 +25,9 @@
 
     heroic
 
-    pkgs.unstable.bitwarden-desktop
+    # pkgs.stable.bitwarden-desktop
+    # pkgs.stable.bitwarden-desktop
+    bitwarden-desktop
   ];
 
   # nixpkgs.config.permittedInsecurePackages = [
