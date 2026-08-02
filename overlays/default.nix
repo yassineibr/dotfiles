@@ -19,12 +19,17 @@
   # be accessible through 'pkgs.unstable'
   unstable-packages = final: _prev: rec {
 
-    unstable = import inputs.nixpkgs-unstable {
+    stable = import inputs.nixpkgs-stable {
       system = final.stdenv.hostPlatform.system;
       config.allowUnfree = true;
       config.permittedInsecurePackages = [
         "electron-39.8.10"
       ];
+    };
+
+    unstable = import inputs.nixpkgs-unstable {
+      system = final.stdenv.hostPlatform.system;
+      config.allowUnfree = true;
     };
 
     netbird = outputs.packages.${_prev.stdenv.hostPlatform.system}.netbird;

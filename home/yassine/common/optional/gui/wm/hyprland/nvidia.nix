@@ -8,10 +8,25 @@
   wayland.windowManager.hyprland = {
     settings = {
       env = [
-        "LIBVA_DRIVER_NAME,nvidia"
-        "GBM_BACKEND,nvidia-drm"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
-        # "WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0"
+        {
+          _args = [
+            "LIBVA_DRIVER_NAME"
+            "nvidia"
+          ];
+        }
+        {
+          _args = [
+            "GBM_BACKEND"
+            "nvidia-drm"
+          ];
+        }
+        {
+          _args = [
+            "__GLX_VENDOR_LIBRARY_NAME"
+            "nvidia"
+          ];
+        }
+        # { _args = [ # "WLR_DRM_DEVICES,/dev/dri/card1:/dev/dri/card0" ]; }
       ];
     };
   };

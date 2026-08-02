@@ -33,14 +33,39 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        "HDMI-A-1,preferred,auto-right,1"
-        "desc:Dell Inc. DELL S2721HN 9GJ3V83,1920x1080@74.97,auto-right,1"
-        "desc:Microstep MAG 255F E20 BC2M435300423,1920x1080@120,auto-right,1"
-        "eDP-1,preferred,auto-left,1"
+        {
+          output = "HDMI-A-1";
+          mode = "preferred";
+          position = "auto-right";
+          scale = 1;
+        }
+        {
+          output = "desc:Dell Inc. DELL S2721HN 9GJ3V83";
+          mode = "1920x1080@74.97";
+          position = "auto-right";
+          scale = 1;
+        }
+        {
+          output = "desc:Microstep MAG 255F E20 BC2M435300423";
+          mode = "1920x1080@120";
+          position = "auto-right";
+          scale = 1;
+        }
+        {
+          output = "eDP-1";
+          mode = "preferred";
+          position = "auto-left";
+          scale = 1;
+        }
       ];
 
       env = [
-        "AQ_DRM_DEVICES,/dev/dri/card0:/dev/dri/card2:/dev/dri/card1"
+        {
+          _args = [
+            "AQ_DRM_DEVICES"
+            "/dev/dri/card0:/dev/dri/card2:/dev/dri/card1"
+          ];
+        }
       ];
     };
   };

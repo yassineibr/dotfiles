@@ -39,5 +39,5 @@
   };
 
   ## Secure Boot
-  boot.bootspec.enable = true;
+  # boot.bootspec.enable = true;
 }

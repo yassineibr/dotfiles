@@ -1,4 +1,11 @@
 {
+  lib,
+  ...
+}:
+let
+  lua = lib.generators.mkLuaInline;
+in
+{
   programs.kitty = {
     enable = true;
     shellIntegration.enableBashIntegration = true;
@@ -16,13 +23,24 @@
 
   wayland.windowManager.hyprland = {
     settings = {
-      workspace = [
-        "special:magic, on-created-empty:kitty, gapsout:50"
+      # ---- workspace rule (was `workspace = [ ... ]`) -> hl.workspace_rule({...}) ----
+      workspace_rule = [
+        {
+          workspace = "special:magic";
+          on_created_empty = "kitty";
+          gaps_out = 50;
+        }
       ];
+
+      # ---- keybind (was `bind = [ ... ]`) -> hl.bind(keys, dispatcher) ----
       bind = [
-        "$mainMod, RETURN, exec, kitty"
+        {
+          _args = [
+            "SUPER + RETURN"
+            (lua "hl.dsp.exec_cmd(${builtins.toJSON "kitty"})")
+          ];
+        }
       ];
     };
   };
-
 }

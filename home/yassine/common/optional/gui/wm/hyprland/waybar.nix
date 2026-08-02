@@ -1,15 +1,40 @@
-{ ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  config,
+  ...
+}:
+let
+  lua = lib.generators.mkLuaInline;
+in
 {
   imports = [ ../../bars/waybar ];
 
   wayland.windowManager.hyprland = {
-    enable = true;
     settings = {
-      exec = [ "pkill waybar; sleep 0.5 && waybar" ];
+      # ---- exec-once (was `exec-once = [ ... ]`) -> hl.on("hyprland.start", fn) ----
+      on = [
+        {
+          _args = [
+            "config.reloaded"
+            (lua ''
+              function()
+                hl.exec_cmd(${builtins.toJSON "pkill waybar; sleep 0.5 && waybar"})
+              end
+            '')
+          ];
+        }
+      ];
 
+      # ---- keybind (was `bind = [ ... ]`) -> hl.bind(keys, dispatcher) ----
       bind = [
-        # waybar
-        "$mainMod, W, exec, pkill -SIGUSR1 waybar" # Hide Waybar
+        {
+          _args = [
+            "SUPER + W"
+            (lua "hl.dsp.exec_cmd(${builtins.toJSON "pkill -SIGUSR1 waybar"})")
+          ];
+        }
       ];
     };
   };

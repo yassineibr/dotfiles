@@ -1,31 +1,42 @@
 {
   inputs,
   pkgs,
+  lib,
   config,
   ...
 }:
+let
+  lua = lib.generators.mkLuaInline;
+in
 {
   home.packages = with pkgs; [
-		cliphist
-    # (cliphist.overrideAttrs (_old: {
-    #   src = pkgs.fetchFromGitHub {
-    #     owner = "sentriz";
-    #     repo = "cliphist";
-    #     rev = "c49dcd26168f704324d90d23b9381f39c30572bd";
-    #     sha256 = "sha256-2mn55DeF8Yxq5jwQAjAcvZAwAg+pZ4BkEitP6S2N0HY=";
-    #   };
-    #   vendorHash = "sha256-M5n7/QWQ5POWE4hSCMa0+GOVhEDCOILYqkSYIGoy/l0=";
-    # }))
+    cliphist
   ];
-
   wayland.windowManager.hyprland = {
     settings = {
-      exec-once = [
-        "wl-paste --type text --watch cliphist store #Stores only text data"
-        "wl-paste --type image --watch cliphist store #Stores only image data"
+      # ---- exec-once (was `exec-once = [ ... ]`) -> hl.on("hyprland.start", fn) ----
+      on = [
+        {
+          _args = [
+            "hyprland.start"
+            (lua ''
+              function()
+                hl.exec_cmd(${builtins.toJSON "wl-paste --type text --watch cliphist store"}) -- Stores only text data
+                hl.exec_cmd(${builtins.toJSON "wl-paste --type image --watch cliphist store"}) -- Stores only image data
+              end
+            '')
+          ];
+        }
       ];
+
+      # ---- keybind (was `bind = [ ... ]`) -> hl.bind(keys, dispatcher) ----
       bind = [
-        "SUPER, V, exec, pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        {
+          _args = [
+            "SUPER + V"
+            (lua "hl.dsp.exec_cmd(${builtins.toJSON "pkill rofi || cliphist list | rofi -dmenu | cliphist decode | wl-copy"})")
+          ];
+        }
       ];
     };
   };
