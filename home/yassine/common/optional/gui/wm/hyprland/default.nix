@@ -362,7 +362,7 @@ in
             "passthru"
             (lua ''
               function()
-                hl.bind("${mainMod} + Escape", hl.dsp.submap("default"))
+                hl.bind("${mainMod} + Escape", hl.dsp.submap("reset"))
               end
             '')
           ];
