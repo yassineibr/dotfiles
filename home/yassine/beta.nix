@@ -23,7 +23,6 @@
     ./common/optional/gui/wm/hyprland
     # ./common/optional/gui/wm/hyprland/touch.nix
     ./common/optional/gui/wm/hyprland/waybar.nix
-    # ./common/optional/gui/wm/hyprland/ags.nix
     ./common/optional/gui/terminal/foot.nix
   ];
 

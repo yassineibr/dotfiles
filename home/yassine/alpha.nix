@@ -25,7 +25,6 @@
     ./common/optional/gui/wm/hyprland/nvidia.nix
     ./common/optional/gui/wm/hyprland/noctalia.nix
     # ./common/optional/gui/wm/hyprland/waybar.nix
-    # ./common/optional/gui/wm/hyprland/ags.nix
     ./common/optional/gui/terminal/kitty.nix
     # ./common/optional/gui/terminal/foot.nix
   ];

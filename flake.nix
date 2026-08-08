@@ -52,11 +52,8 @@
 
     # HyprWM Flakes
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
-
     hyprlock.url = "github:hyprwm/Hyprlock";
-
     hyprpaper.url = "github:hyprwm/hyprpaper";
-
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
       inputs.hyprland.follows = "hyprland"; # IMPORTANT
@@ -67,11 +64,6 @@
       url = "github:noctalia-dev/noctalia/legacy-v4";
       # inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # AGS
-    matugen.url = "github:InioX/matugen?ref=v2.2.0";
-    ags.url = "github:Aylur/ags";
-    astal.url = "github:Aylur/astal";
 
     # Secure Boot
     lanzaboote = {
