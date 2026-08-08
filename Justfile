@@ -35,6 +35,10 @@ update repo="":
 update-netbird:
     nix-update netbird --flake
 
+update-pkgs:
+    nix-update netbird --flake
+    nix-update varlock --flake
+
 nvfetcher:
 	cd overlays && nvfetcher
 	just fmt

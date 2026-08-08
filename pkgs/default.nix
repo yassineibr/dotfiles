@@ -8,4 +8,6 @@
   iio-hyprland = pkgs.callPackage ./iio-hyprland.nix { };
 
   netbird = import ./netbird { inherit pkgs inputs; };
+
+  varlock = pkgs.callPackage ./varlock/default.nix { };
 }
