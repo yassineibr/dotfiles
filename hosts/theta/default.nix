@@ -25,6 +25,7 @@
     ../common/optional/virtualisation/docker.nix
 
     ../common/optional/cache
+    ../common/optional/services/atticd.nix
 
     ../common/users/yassine
 
