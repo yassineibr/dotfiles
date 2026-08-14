@@ -52,9 +52,9 @@ in
     theta = mkDeploy { host = "theta"; };
     gamma = mkDeploy { host = "gamma"; };
     upsilon = mkDeploy { host = "upsilon"; };
-    epsilon = mkDeploy {
-      host = "epsilon";
-      arch = "aarch64-linux";
-    };
+    # epsilon = mkDeploy {
+    #   host = "epsilon";
+    #   arch = "aarch64-linux";
+    # };
   };
 }
