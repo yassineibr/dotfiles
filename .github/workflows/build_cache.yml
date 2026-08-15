@@ -108,7 +108,7 @@ jobs:
 
       # push the built system to our `system` cache!
       - name: Push system
-        run: nix develop .#ci --command attic push --ignore-upstream-cache-filter system result -j 2
+        run: nix develop .#ci --command attic push system result -j 2
 
   merge-similar-caches:
     name: Merge similar caches
