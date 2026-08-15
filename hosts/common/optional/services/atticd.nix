@@ -1,4 +1,4 @@
-{ config, ...  }:
+{ config, ... }:
 {
 
   sops.secrets."attic-server-env" = { };
@@ -41,4 +41,3 @@
 
   networking.firewall.allowedTCPPorts = [ 8180 ];
 }
-

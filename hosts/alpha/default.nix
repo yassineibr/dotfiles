@@ -52,6 +52,9 @@
     ../common/optional/cache
   ];
 
+  services.tuned.enable = true;
+  hardware.bluetooth.enable = true;
+
   programs.nix-ld.enable = true;
   networking.firewall.enable = false;
   virtualisation.docker.daemon.settings = {

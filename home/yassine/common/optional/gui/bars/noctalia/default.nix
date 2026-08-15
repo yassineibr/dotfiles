@@ -2,11 +2,11 @@
 {
   imports = [
     inputs.noctalia.homeModules.default
-    ./plugins.nix
+    # ./plugins.nix
   ];
 
   # configure options
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
     # package = (
     #   inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {

@@ -28,7 +28,7 @@
     wireshark
     unstable.zellij
     tmux
-    moonlight-qt
+    # moonlight-qt
 
     vlc
   ];

@@ -21,7 +21,7 @@
 
     pinentry-curses
     # networkmanager-openvpn
-    waypipe
+    # waypipe
 
     heroic
 

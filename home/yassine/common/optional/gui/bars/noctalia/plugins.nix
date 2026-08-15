@@ -1,7 +1,7 @@
 { ... }:
 {
   # configure options
-  programs.noctalia-shell = {
+  programs.noctalia = {
     plugins = {
       sources = [
         {

@@ -16,7 +16,7 @@ in
             "hyprland.start"
             (lua ''
               function()
-                hl.exec_cmd(${builtins.toJSON "noctalia-shell || noctalia"})
+                hl.exec_cmd(${builtins.toJSON "noctalia"})
               end
             '')
           ];
