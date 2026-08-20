@@ -25,6 +25,9 @@
 
     heroic
 
+		openbao
+		jq
+
     # pkgs.stable.bitwarden-desktop
     # pkgs.stable.bitwarden-desktop
     bitwarden-desktop
